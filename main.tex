@@ -378,7 +378,7 @@ Along with the scale of SOFC stack, mass flow rates of fuel inlet at each operat
 Where \({\dot{n}}_{O^{2 -}}\) is the rate of oxygen ion transport,
 \({MW}_{{NH}_{3}}\) is the molar mass of ammonia, respectively. When
 AOGR is applied, unused fuel from the SOFC stack outlet is recirculated, and the recirculated fuel supplies the fuel demand at the anode inlet.
-Such process reduces the amount of fuel required at the system inlet to satisfy stack fuel utilization conditions.
+Such process reduces the amount of fuel required at the system inlet to satisfy \({FU}_{stack}\) conditions.
 
 Dimensional parameters for the heat exchanger and reformer were determined following standard design guidelines for commercial shell-and-tube heat exchangers \cite{thulukkanam2000heat,kakacc2002heat, thome2006wolverine}.
 Key geometric variables---including tube length, shell diameter, and baffle spacing---were tuned to ensure that the required heat duties are met over a wide operating range.
@@ -432,7 +432,7 @@ Catalyst pellet length & 0.01041 & [m] & \\
 
 \subsection{Operating parameters for parametric study}
 
-To analyze the operating limits and performance effects of AOGR ratio via parametric study, the following operating parameters were varied together with AOGR ratio: stack inlet gas temperature, fuel utilization, current density.
+To analyze the operating limits and performance effects of AOGR ratio via parametric study, the following operating parameters were varied together with AOGR ratio: \(T_{stack}\), \({FU}_{stack}\), \emph{j}.
 The range and values of parameter variation are described in Table~\ref{tab:operating-params}.
 
 \begin{table}[!t]
@@ -457,9 +457,9 @@ Values
 Unit
 \end{minipage} \\
 \midrule\noalign{}
-Stack inlet temperature & 600, 650, 700, 750, 800 & [\textdegree C] \\
-Fuel utilization & 40, 50, 60, 70, 80 & [\%] \\
-Current density & 0.1, 0.2, 0.3, 0.4, 0.5 &
+\(T_{stack}\) & 600, 650, 700, 750, 800 & [\textdegree C] \\
+\({FU}_{stack}\) & 40, 50, 60, 70, 80 & [\%] \\
+\emph{j} & 0.1, 0.2, 0.3, 0.4, 0.5 &
 {[}A/cm\textsuperscript{2}{]} \\
 AOGR ratio & 0, 10, 20, 30, 40, 50\ldots{} Max & [\%] \\
 \bottomrule\noalign{}
@@ -471,6 +471,7 @@ AOGR ratio & 0, 10, 20, 30, 40, 50\ldots{} Max & [\%] \\
 \section{Results and Discussion}
 
 To analyze the sole effect of each operating parameter, each parameters were primarily varied at the base case.
+The complete stream table for the base case operation is provided in supplementary table XX.
 Key performance indices include system gross power, electrical efficiency, etc.
 In this study, the only parasitic power induced in the system is power consumption at the air blower.
 Therefore, electrical efficiency and net power can be defined as Eqs.~\eqref{eq:efficiency} and \eqref{eq:net-power}.
@@ -514,31 +515,31 @@ In the case of \({FU}_{stack}\), its value directly determines the ammonia fuel 
 As \({FU}_{stack}\) increases from 40\% to 80\%, the ammonia fuel flow rate required to sustain the target electrochemical operating condition of the SOFC stack decreases, which in turn reduces the mass flow rate of the anode-side gases passing through the fuel cracker cold side.
 For a given packed bed reformer geometry, this reduction in flow rate diminishes the viscous friction effect within the catalyst bed, leading to a decrease in the cold side pressure drop.
 As shown in Fig.~\ref{fig:max-aogr}(a), when \({FU}_{stack}\) increases from 40\% to 80\%, the reformer cold side pressure drop decreases monotonically from 8.76 kPa at 40\% \({FU}_{stack}\) to 6.66 kPa at 80\% \({FU}_{stack}\).
-Since a lower reformer cold-side pressure drop alleviates the discharge back pressure of the ejector imposed in the AOGR loop, the maximum allowable recirculation ratio that the system can sustain correspondingly increases from 65.4\% to 66.9\% over the same \({FU}_{stack}\) range.
-This trend indicates that operating the system at higher \({FU}_{stack}\) is operationally favorable for expanding the feasible AOGR operating window, as the reduced anode-side flow rate mitigates the parasitic pressure losses across the reformer and thereby relaxes the pressure-balance constraint that governs the upper bound of the recirculation ratio.
+Since a lower reformer cold-side pressure drop alleviates the discharge back pressure of the ejector imposed in the AOGR loop, the maximum allowable AOGR ratio that the system can sustain correspondingly increases from 65.4\% to 66.9\% over the same \({FU}_{stack}\) range.
+This trend indicates that operating the system at higher \({FU}_{stack}\) is operationally favorable for expanding the feasible AOGR operating window, as the reduced anode-side flow rate mitigates the parasitic pressure losses across the reformer and thereby relaxes the pressure-balance constraint that governs the upper bound of the AOGR ratio.
 
 In the case of \emph{j}, its value directly determines the amount of fuel electrochemically consumed in the SOFC stack, and thereby simultaneously increases both the air and ammonia fuel flow rates required at the system inlet.
 As \emph{j} increases from 0.1 A/cm\textsuperscript{2} to 0.5 A/cm\textsuperscript{2}, the ammonia fuel flow rate required to sustain the elevated electrochemical reaction rate rises accordingly, which in turn increases the mass flow rate of the anode-side gases passing through the fuel cracker cold side.
 Furthermore, a higher \emph{j} leads to a larger heat duty for the endothermic ammonia decomposition reaction, which requires a longer fuel cracker length to provide sufficient heat transfer area.
 The combined effect of the increased flow rate and the extended cracker length amplifies the viscous friction loss along the packed catalyst bed, leading to a substantial increase in the cold side pressure drop.
 As shown in Fig.~\ref{fig:max-aogr}(b), when \emph{j} increases from 0.1 A/cm\textsuperscript{2} to 0.5 A/cm\textsuperscript{2}, the reformer cold side pressure drop increases monotonically from 6.50 kPa at 0.1 A/cm\textsuperscript{2} to 11.14 kPa at 0.5 A/cm\textsuperscript{2}.
-Since a higher cracker cold-side pressure drop intensifies the discharge back pressure of the ejector imposed in the anode off-gas recirculation loop, the maximum allowable recirculation ratio that the system can sustain correspondingly decreases from 67.3\% to 62.0\% over the same current density range.
-This trend indicates that operating the system at higher \emph{j} narrows the feasible AOGR operating window, as the simultaneous increase in anode-side flow rate and reformer length aggravates the parasitic pressure losses across the cracker and thereby tightens the pressure-balance constraint that governs the upper bound of the recirculation ratio.
+Since a higher cracker cold-side pressure drop intensifies the discharge back pressure of the ejector imposed in the AOGR loop, the maximum allowable AOGR ratio that the system can sustain correspondingly decreases from 67.3\% to 62.0\% over the same \emph{j} range.
+This trend indicates that operating the system at higher \emph{j} narrows the feasible AOGR operating window, as the simultaneous increase in anode-side flow rate and reformer length aggravates the parasitic pressure losses across the cracker and thereby tightens the pressure-balance constraint that governs the upper bound of the AOGR ratio.
 
 In the case of \(T_{stack}\), its value directly determines the temperature of the entrained anode off-gas returning to the ejector as well as the temperature of the gas entering the fuel cracker cold side.
 As \(T_{stack}\) increases from 600 \textdegree C to 800 \textdegree C, the elevated gas temperature reduces the gas density at a fixed mass flow rate, which in turn increases the volumetric flow velocity through the fuel cracker cold side.
 This higher flow velocity enhances the viscous friction loss along the packed catalyst bed, leading to a gradual increase in the cold side pressure drop.
 As shown in Fig.~\ref{fig:max-aogr}(c), when \(T_{stack}\) increases from 600 \textdegree C to 800 \textdegree C, the reformer cold side pressure drop increases monotonically from 6.96 kPa at 600 \textdegree C to 8.66 kPa at 800 \textdegree C.
-However, in contrast to the cases of \({FU}_{stack}\) and \emph{j}, the variation in the cold side pressure drop alone is insufficient to account for the magnitude of the change in the maximum allowable recirculation ratio, which decreases from 66.6\% at 600 \textdegree C to 61.2\% at 800 \textdegree C over the same temperature range.
+However, in contrast to the cases of \({FU}_{stack}\) and \emph{j}, the variation in the cold side pressure drop alone is insufficient to account for the magnitude of the change in the maximum allowable AOGR ratio, which decreases from 66.6\% at 600 \textdegree C to 61.2\% at 800 \textdegree C over the same temperature range.
 Such substantial reduction implies that, under varying \(T_{stack}\), the upper bound of the AOGR ratio is governed not only by the reformer pressure drop but more dominantly by the entrainment performance of the ejector itself.
 
 Specifically, as the temperature of the entrained anode off-gas rises while the primary flow condition remains fixed, the speed of sound of the secondary stream also increases, which leads to a reduction in the convective Mach number that characterizes the compressible mixing process between the primary and secondary flows within the ejector.
 According to the recent numerical investigation of supersonic ejector mixing by Liang et al.~\cite{liang2025numerical} a lower convective Mach number---corresponding to a higher total temperature ratio between the secondary and primary flows---weakens the momentum exchange across the confined mixing layer, thereby deteriorating the mixing process between the two streams.
 Since insufficient mixing prevents the secondary flow from being adequately accelerated by the high-velocity primary flow, the Mach number of the mixed flow at the diffuser inlet decreases, which in turn degrades both the entrainment capability and the pressure lift performance of the ejector.
-Consequently, the ejector becomes less capable of overcoming the discharge back pressure of the recirculation loop, and the maximum allowable recirculation ratio decreases more sharply than what the reformer pressure drop alone would predict.
+Consequently, the ejector becomes less capable of overcoming the discharge back pressure of the AOGR loop, and the maximum allowable AOGR ratio decreases more sharply than what the reformer pressure drop alone would predict.
 To verify this, a supplementary analysis was conducted by modelling a simple ejector system inhaling pure ammonia as primary flow and arbitrary anode off-gas as the entrained flow.
 The results confirm that for a constant entrainment ratio, pressure lift performance of the ejector decreases as the temperature of entrainment flow increases (Supplementary Table XX).
-This trend indicates that operating the system at higher \(T_{stack}\) is operationally unfavorable for sustaining a wide AOGR operating window, as the deteriorated performance becomes the dominant constraint that governs the upper bound of the recirculation ratio.
+This trend indicates that operating the system at higher \(T_{stack}\) is operationally unfavorable for sustaining a wide AOGR operating window, as the deteriorated performance becomes the dominant constraint that governs the upper bound of the AOGR ratio.
 
 \begin{figure*}[width=\textwidth,pos=!t]
 \centering
@@ -559,30 +560,30 @@ This trend indicates that operating the system at higher \(T_{stack}\) is operat
 \includegraphics[width=\linewidth]{image7.png}
 \caption{}
 \end{subfigure}%
-\caption{Maximum AOGR ratio permitted for variations in (a) fuel utilization, (b) current density, and (c) stack inlet temperature.}
+\caption{Maximum AOGR ratio permitted for variations in (a) \({FU}_{stack}\), (b) \emph{j}, and (c) \(T_{stack}\).}
 \label{fig:max-aogr}
 \end{figure*}
 
 \subsection{Effect of AOGR ratio at different operating conditions}
 
 While the previous section identified the maximum allowable AOGR ratio under each operating condition, the AOGR ratio itself is a key design variable that strongly influences the overall system performance within the feasible operating window.
-In this section, the effect of the AOGR ratio on the system performance is investigated under varying operating conditions, namely fuel utilization, current density, and stack inlet temperature.
+In this section, the effect of the AOGR ratio on the system performance is investigated under varying operating conditions, namely \({FU}_{stack}\), \emph{j}, and \(T_{stack}\).
 For each operating condition, the AOGR ratio is varied from zero up to the maximum allowable value determined in Section 4.1, and the resulting trends in system efficiency and key state variables are analyzed.
 This two-dimensional parametric analysis enables a comprehensive understanding of how the AOGR ratio interacts with each operating condition to shape the overall performance characteristics of the NH$_3$-fueled SOFC system.
 
 \subsubsection{Effect of AOGR ratio at different fuel utilizations}
 
-To investigate the influence of the AOGR ratio on the system performance under varying fuel utilization, the AOGR ratio was swept from 0\% up to the maximum allowable value identified in Section 4.1, while the fuel utilization was varied from 40\% to 80\%.
+To investigate the influence of the AOGR ratio on the system performance under varying \({FU}_{stack}\), the AOGR ratio was swept from 0\% up to the maximum allowable value identified in Section 4.1, while \({FU}_{stack}\) was varied from 40\% to 80\%.
 The resulting trends in system efficiency and stack power density are summarized in Fig.~\ref{fig:fuel-utilization-map}(a), where each iso-fuel-utilization line traces the trajectory of the system operating point as the AOGR ratio increases.
 
-As shown in Fig.~\ref{fig:fuel-utilization-map}(a), increasing the AOGR ratio consistently improves system efficiency while reducing stack power density across all fuel utilization conditions.
-However, these two opposing effects respond differently to fuel utilization: the efficiency gain varies significantly with fuel utilization, whereas the power density penalty remains nearly insensitive to it.
-At a low fuel utilization of 40\%, raising the AOGR ratio from 0\% to its maximum allowable value of 65.4\% increases the system efficiency from 33.9\% to 51.3\%, an absolute gain of 17.4 percentage points.
-At a high fuel utilization of 80\%, the same operation only improves the efficiency from 64.5\% to 68.0\%, yielding a much smaller gain of 3.5 percentage points.
-This asymmetry indicates that the efficiency benefit of anode off-gas recirculation is substantially greater at low fuel utilization.
+As shown in Fig.~\ref{fig:fuel-utilization-map}(a), increasing the AOGR ratio consistently improves system efficiency while reducing stack power density across all \({FU}_{stack}\) conditions.
+However, these two opposing effects respond differently to \({FU}_{stack}\): the efficiency gain varies significantly with \({FU}_{stack}\), whereas the power density penalty remains nearly insensitive to it.
+At a low \({FU}_{stack}\) of 40\%, raising the AOGR ratio from 0\% to its maximum allowable value of 65.4\% increases the system efficiency from 33.9\% to 51.3\%, an absolute gain of 17.4 percentage points.
+At a high \({FU}_{stack}\) of 80\%, the same operation only improves the efficiency from 64.5\% to 68.0\%, yielding a much smaller gain of 3.5 percentage points.
+This asymmetry indicates that the efficiency benefit of AOGR is substantially greater at low \({FU}_{stack}\).
 
 The origin of this asymmetry can be explained by the AOGR-induced reduction in the system fuel input.
-Under steady-state operation, the mass flow rate of ammonia required at the system inlet to sustain a target stack fuel utilization is given by Eq.~\eqref{eq:fuel-flow}.
+Under steady-state operation, the mass flow rate of ammonia required at the system inlet to sustain a target \({FU}_{stack}\) is given by Eq.~\eqref{eq:fuel-flow}.
 
 The first parenthetical term on the right-hand side represents the stoichiometric fuel consumption rate, while the second term,
 \(\left( 1 - r(1 - FU_{stack}) \right)\), captures the effect of
@@ -590,18 +591,18 @@ recirculation on the system-level fuel demand.
 Since
 \(\left( 1-FU_{stack} \right)\)is the unutilized fuel fraction exiting
 the stack, the term \(r(1 - FU_{stack})\)quantifies the amount of unreacted fuel recovered through recirculation.
-At low fuel utilization, a substantial fraction of unreacted fuel is available for recovery, so even modest recirculation ratios significantly reduce the fresh fuel demand.
-At high fuel utilization, the recoverable amount is limited and recirculation provides only marginal savings.
+At low \({FU}_{stack}\), a substantial fraction of unreacted fuel is available for recovery, so even modest AOGR ratios significantly reduce the fresh fuel demand.
+At high \({FU}_{stack}\), the recoverable amount is limited and AOGR provides only marginal savings.
 As shown in Fig.~\ref{fig:fuel-utilization-map}(b), at FU = 40\% the system fuel input expressed in terms of thermal energy decreases dramatically from 157.6 kW to 95.7 kW, whereas at FU = 80\% it decreases only from 78.8 kW to 68.2 kW---a disparity that directly translates into the efficiency gain disparity observed in Fig.~\ref{fig:fuel-utilization-map}(a).
 
-In contrast, the stack power density penalty associated with recirculation is nearly independent of the fuel utilization.
+In contrast, the stack power density penalty associated with AOGR is nearly independent of \({FU}_{stack}\).
 As the AOGR ratio increases, the recirculated stream---rich in N$_2$ and H$_2$O---dilutes the fresh decomposed fuel and lowers the hydrogen partial pressure at the stack anode inlet.
 According to the Nernst equation, this reduction suppresses the open circuit voltage (OCV) and consequently the cell voltage.
 As shown in Fig.~\ref{fig:fuel-utilization-map}(c), increasing the AOGR ratio from 0\% to its maximum value reduces the cell voltage from 0.941 V to 0.878 V at FU = 40\% (a drop of 0.063 V), and from 0.903 V to 0.832 V at FU = 80\% (a drop of 0.071 V).
-The two voltage drops differ by less than 10 mV, indicating that the AOGR-induced voltage degradation is essentially comparable across the fuel utilization range.
-This near-uniform behavior arises because the fuel dilution effect due to AOGR occurs in a similar magnitude among different fuel utilization values.
+The two voltage drops differ by less than 10 mV, indicating that the AOGR-induced voltage degradation is essentially comparable across the \({FU}_{stack}\) range.
+This near-uniform behavior arises because the fuel dilution effect due to AOGR occurs in a similar magnitude among different \({FU}_{stack}\) values.
 Consistent with this, the resulting power density reductions---from 0.188 W/cm\textsuperscript{2} to 0.176 W/cm\textsuperscript{2} at FU = 40\% and from 0.181 W/cm\textsuperscript{2} to 0.166 W/cm\textsuperscript{2} at FU = 80\%---differ by only 0.003 W/cm\textsuperscript{2}.
-Such results show that AOGR is most advantageous for SOFC systems operated at relatively low fuel utilization.
+Such results show that AOGR is most advantageous for SOFC systems operated at relatively low \({FU}_{stack}\).
 
 \begin{figure*}[width=\textwidth,pos=!t]
 \centering
@@ -622,27 +623,27 @@ Such results show that AOGR is most advantageous for SOFC systems operated at re
 \includegraphics[width=\linewidth]{image10.png}
 \caption{}
 \end{subfigure}%
-\caption{Performance map showing (a) efficiency and power density, (b) LHV, and (c) voltage as a function of fuel utilization and AOGR ratio.}
+\caption{Performance map showing (a) efficiency and power density, (b) LHV, and (c) voltage as a function of \({FU}_{stack}\) and AOGR ratio.}
 \label{fig:fuel-utilization-map}
 \end{figure*}
 
 \subsubsection{Effect of AOGR ratio at different current density}
 
-System performance was next examined under varying current density and AOGR ratio, and the resulting trajectories of system efficiency and stack power density are presented in Fig.~\ref{fig:current-density-map}(a).
-At a low current density of 0.1 A/cm\textsuperscript{2}, increasing the AOGR ratio from 0\% to its maximum allowable value of 67.3\% improves the system efficiency from 60.7\% to 69.9\%, corresponding to an absolute gain of 9.2 percentage points.
-At a high current density of 0.5 A/cm\textsuperscript{2}, however, the same operation only enhances the efficiency from 46.3\% to 49.8\%, yielding a much smaller gain of 3.5 percentage points.
-Notably, the iso-current-density trajectories at high current density exhibit a non-monotonic behavior: at 0.5 A/cm\textsuperscript{2}, the system efficiency increases with the AOGR ratio up to approximately 60\%, but then decreases as the AOGR ratio is further raised toward its maximum allowable value.
-This reversal is not observed at low current density conditions, where the efficiency rises monotonically across the entire feasible range of the AOGR ratio.
-The existence of an internal optimum at high current density indicates that anode off-gas recirculation introduces a competing penalty that becomes increasingly dominant as the current density increases.
+System performance was next examined under varying \emph{j} and AOGR ratio, and the resulting trajectories of system efficiency and stack power density are presented in Fig.~\ref{fig:current-density-map}(a).
+At a low \emph{j} of 0.1 A/cm\textsuperscript{2}, increasing the AOGR ratio from 0\% to its maximum allowable value of 67.3\% improves the system efficiency from 60.7\% to 69.9\%, corresponding to an absolute gain of 9.2 percentage points.
+At a high \emph{j} of 0.5 A/cm\textsuperscript{2}, however, the same operation only enhances the efficiency from 46.3\% to 49.8\%, yielding a much smaller gain of 3.5 percentage points.
+Notably, the iso-\emph{j} trajectories at high \emph{j} exhibit a non-monotonic behavior: at 0.5 A/cm\textsuperscript{2}, the system efficiency increases with the AOGR ratio up to approximately 60\%, but then decreases as the AOGR ratio is further raised toward its maximum allowable value.
+This reversal is not observed at low \emph{j} conditions, where the efficiency rises monotonically across the entire feasible range of the AOGR ratio.
+The existence of an internal optimum at high \emph{j} indicates that AOGR introduces a competing penalty that becomes increasingly dominant as \emph{j} increases.
 
-In contrast, the trend in stack power density with increasing AOGR ratio is far less sensitive to the current density.
-As shown in Fig.~\ref{fig:current-density-map}(b), the cell voltage at any given current density decreases by a comparable magnitude as the AOGR ratio is increased, regardless of the absolute current density level.
+In contrast, the trend in stack power density with increasing AOGR ratio is far less sensitive to \emph{j}.
+As shown in Fig.~\ref{fig:current-density-map}(b), the cell voltage at any given \emph{j} decreases by a comparable magnitude as the AOGR ratio is increased, regardless of the absolute \emph{j} level.
 Specifically, increasing the AOGR ratio from 0\% to its maximum value reduces the cell voltage from 0.962 V to 0.890 V at 0.1 A/cm\textsuperscript{2} (a drop of 0.072 V) and from 0.790 V to 0.732 V at 0.5 A/cm\textsuperscript{2} (a drop of 0.058 V).
-The slightly larger voltage drop observed at low current density is partly attributable to the significantly wider AOGR sweep range, since the maximum allowable AOGR ratio is 67.3\% at 0.1 A/cm\textsuperscript{2} but only 62.0\% at 0.5 A/cm\textsuperscript{2}.
+The slightly larger voltage drop observed at low \emph{j} is partly attributable to the significantly wider AOGR sweep range, since the maximum allowable AOGR ratio is 67.3\% at 0.1 A/cm\textsuperscript{2} but only 62.0\% at 0.5 A/cm\textsuperscript{2}.
 When this difference in the AOGR sweep range is taken into account, the corresponding relative reductions in power density---from 0.096 W/cm\textsuperscript{2} to 0.089 W/cm\textsuperscript{2} at 0.1 A/cm\textsuperscript{2} and from 0.395 W/cm\textsuperscript{2} to 0.366 W/cm\textsuperscript{2} at 0.5 A/cm\textsuperscript{2}---correspond to nearly the same value of approximately 7\% in both cases.
-This near-uniform power density degradation across current density conditions can be understood from the fact that the current density does not significantly alter the molar composition at the stack inlet and outlet.
-Consequently, the resulting reduction in the anode hydrogen partial pressure is governed primarily by the AOGR ratio itself rather than by the operating current density.
-Since the power density penalty alone cannot account for the non-monotonic efficiency behavior observed at high current density, the source of the reversal must instead lie in the parasitic power consumption of the system BoP.
+This near-uniform power density degradation across \emph{j} conditions can be understood from the fact that \emph{j} does not significantly alter the molar composition at the stack inlet and outlet.
+Consequently, the resulting reduction in the anode hydrogen partial pressure is governed primarily by the AOGR ratio itself rather than by the operating \emph{j}.
+Since the power density penalty alone cannot account for the non-monotonic efficiency behavior observed at high \emph{j}, the source of the reversal must instead lie in the parasitic power consumption of the system BoP.
 
 \begin{figure*}[width=\textwidth,pos=!t]
 \centering
@@ -657,7 +658,7 @@ Since the power density penalty alone cannot account for the non-monotonic effic
 \includegraphics[width=\linewidth]{image12.png}
 \caption{}
 \end{subfigure}%
-\caption{Performance map showing (a) efficiency and power density and (b) voltage as a function of current density and AOGR ratio.}
+\caption{Performance map showing (a) efficiency and power density and (b) voltage as a function of \emph{j} and AOGR ratio.}
 \label{fig:current-density-map}
 \end{figure*}
 
@@ -685,26 +686,26 @@ In SOFC operation, the cathode air flow rate is determined by the boundary condi
 As discussed earlier, increasing the AOGR ratio reduces the cell operating voltage and consequently lowers the stack power generation.
 Since the total chemical energy released by the electrochemical reaction is partitioned between electrical work and heat, a reduction in the electrical power output translates directly into an increase in the heat that must be removed from the stack to maintain the prescribed inlet--outlet temperature difference.
 To dissipate this additional heat, the cathode air flow rate must therefore be increased.
-This larger air flow rate elevates the heat capacity flow rate (\(\dot{m}C_{p}\)) on the cold side of the air heat exchanger, which receives the cathode air at ambient temperature and heats it up to the stack inlet temperature.
-Since the cold stream now carries a greater thermal load to be transferred from the hot stream, and since the cold-side outlet temperature must remain fixed at the stack inlet temperature setpoint, the mass flow rate of the hot stream supplying the air heat exchanger must also increase to satisfy the heat balance.
+This larger air flow rate elevates the heat capacity flow rate (\(\dot{m}C_{p}\)) on the cold side of the air heat exchanger, which receives the cathode air at ambient temperature and heats it up to \(T_{stack}\).
+Since the cold stream now carries a greater thermal load to be transferred from the hot stream, and since the cold-side outlet temperature must remain fixed at the \(T_{stack}\) setpoint, the mass flow rate of the hot stream supplying the air heat exchanger must also increase to satisfy the heat balance.
 Consequently, \(\Delta p_{air\text{\,}HX,hot}\) grows with the AOGR ratio.
 Combined with the direct increase in air flow rate through the blower itself, these compounding effects cause the air blower parasitic power to grow rapidly with the AOGR ratio.
 
-The relative impact of this parasitic power growth on the overall system efficiency depends strongly on the operating current density, since the absolute magnitude of both the air flow rate and the pressure drops occurring at the heat exchanger and fuel cracker scales with current density.
-As summarized in Table~\ref{tab:parasitic-power}, at a low current density of 0.1 A/cm\textsuperscript{2}, the air blower parasitic power increases from 0.31 kW at zero recirculation to 0.52 kW at the maximum AOGR ratio, accompanied by an increase in \(\Delta p_{Cracker,hot}\)from 1.83 kPa to 3.20 kPa and in
+The relative impact of this parasitic power growth on the overall system efficiency depends strongly on the operating \emph{j}, since the absolute magnitude of both the air flow rate and the pressure drops occurring at the heat exchanger and fuel cracker scales with \emph{j}.
+As summarized in Table~\ref{tab:parasitic-power}, at a low \emph{j} of 0.1 A/cm\textsuperscript{2}, the air blower parasitic power increases from 0.31 kW at zero recirculation to 0.52 kW at the maximum AOGR ratio, accompanied by an increase in \(\Delta p_{Cracker,hot}\)from 1.83 kPa to 3.20 kPa and in
 \(\Delta p_{air\text{\,}HX,hot}\)from 1.92 kPa to 3.04 kPa. 
 Although the absolute increase in parasitic power ($\approx$210 W) is non-negligible, it remains a minor fraction of the gross stack power output, corresponding to approximately 1\% of the gross power generated under this operating condition.
-As a result, at low current density the efficiency gain from reduced fuel input clearly dominates over the parasitic penalty, and the efficiency increases monotonically with the AOGR ratio.
-At a high current density of 0.5 A/cm\textsuperscript{2}, in contrast, the air blower parasitic power soars from 9.42 kW at zero recirculation to 14.13 kW at the maximum AOGR ratio---an absolute increase of approximately 22 times larger than the low-current-density case.
+As a result, at low \emph{j} the efficiency gain from reduced fuel input clearly dominates over the parasitic penalty, and the efficiency increases monotonically with the AOGR ratio.
+At a high \emph{j} of 0.5 A/cm\textsuperscript{2}, in contrast, the air blower parasitic power soars from 9.42 kW at zero recirculation to 14.13 kW at the maximum AOGR ratio---an absolute increase of approximately 22 times larger than the low-\emph{j} case.
 The associated pressure drops on the hot side of the fuel cracker and the air heat exchanger also rise much more steeply, from 4.15 kPa to 9.93 kPa and from 12.04 kPa to 14.68 kPa, respectively.
 The increase in parasitic power at this condition reaches approximately 4.5\% of the gross stack power output at the maximum AOGR ratio, which is significant enough to overcome the benefit of reduced fuel input beyond a certain AOGR ratio.
-Consequently, at 0.5 A/cm\textsuperscript{2}, the system efficiency continues to improve only up to about 60\% recirculation; beyond this point, the marginal increase in parasitic power exceeds the marginal reduction in fuel input, and the efficiency begins to decline despite the continued recovery of unutilized fuel.
-As a result, the dominant trade-off under varying current density shifts from the stack level to the balance-of-plant level, such that the optimal AOGR ratio at high current density lies below the maximum allowable value and decreases further as the current density increases.
+Consequently, at 0.5 A/cm\textsuperscript{2}, the system efficiency continues to improve only up to about 60\% AOGR; beyond this point, the marginal increase in parasitic power exceeds the marginal reduction in fuel input, and the efficiency begins to decline despite the continued recovery of unutilized fuel.
+As a result, the dominant trade-off under varying \emph{j} shifts from the stack level to the balance-of-plant level, such that the optimal AOGR ratio at high \emph{j} lies below the maximum allowable value and decreases further as \emph{j} increases.
 
 \begin{table*}[!t]
 \footnotesize
 \refstepcounter{table}\label{tab:parasitic-power}%
-\noindent\textbf{Table \thetable.} Summary of parasitic power and pressure drops for different AOGR ratios at different current density values
+\noindent\textbf{Table \thetable.} Summary of parasitic power and pressure drops for different AOGR ratios at different \emph{j} values
 
 \vspace{0.5em}
 \small
@@ -714,7 +715,7 @@ As a result, the dominant trade-off under varying current density shifts from th
 \toprule\noalign{}
 Parameters & \multicolumn{10}{c}{Values} & Units \\
 \midrule\noalign{}
-Current Density & \multicolumn{2}{c}{0.1} & \multicolumn{2}{c}{0.2} & \multicolumn{2}{c}{0.3} & \multicolumn{2}{c}{0.4} & \multicolumn{2}{c}{0.5} & A/cm\textsuperscript{2} \\
+\emph{j} & \multicolumn{2}{c}{0.1} & \multicolumn{2}{c}{0.2} & \multicolumn{2}{c}{0.3} & \multicolumn{2}{c}{0.4} & \multicolumn{2}{c}{0.5} & A/cm\textsuperscript{2} \\
 \cmidrule{2-11}
 AOGR ratio & 0 & Max & 0 & Max & 0 & Max & 0 & Max & 0 & Max & \% \\
 \midrule\noalign{}
@@ -727,22 +728,22 @@ AOGR ratio & 0 & Max & 0 & Max & 0 & Max & 0 & Max & 0 & Max & \% \\
 
 \subsubsection{Effect of AOGR ratio at different stack inlet temperatures}
 
-The effect of AOGR ratio on the system performance was finally examined under varying stack inlet temperature conditions, ranging from 600 \textdegree C to 800 \textdegree C.
+The effect of AOGR ratio on the system performance was finally examined under varying \(T_{stack}\) conditions, ranging from 600 \textdegree C to 800 \textdegree C.
 The resulting trajectories of system efficiency and stack power density are presented in Fig.~\ref{fig:temperature-map}(a).
-At zero recirculation, the highest system performance is achieved at a stack inlet temperature of 750 \textdegree C, with the operating point at 700 \textdegree C closely following and effectively overlapping with the 750 \textdegree C case in the efficiency--power density plane.
+At zero recirculation, the highest system performance is achieved at a \(T_{stack}\) of 750 \textdegree C, with the operating point at 700 \textdegree C closely following and effectively overlapping with the 750 \textdegree C case in the efficiency--power density plane.
 Specifically, the corresponding power densities and system efficiencies are virtually identical at 0.1908 W/cm\textsuperscript{2} and 59.92\%, respectively.
 The 600 \textdegree C and 650 \textdegree C operating points yield progressively lower performance than the 700--750 \textdegree C cases, while the 800 \textdegree C case---despite being the highest temperature considered---delivers performance that is consistently lower than that of the 700--750 \textdegree C cases throughout the entire AOGR range.
 This indicates that the cell voltage at zero recirculation already peaks within the 700--750 \textdegree C interval and operating at 800 \textdegree C lies on the descending side of the voltage--temperature curve.
 As the AOGR ratio increases, the trajectories of the higher-temperature cases (750 \textdegree C and 800 \textdegree C) curve downward more steeply than that of the 700 \textdegree C case, and the relative ranking among the operating temperatures evolves accordingly.
 At maximum allowable AOGR ratio, 700 \textdegree C emerges as the most efficient operating temperature with a system efficiency of 67.52\%, while 750 \textdegree C falls slightly behind at 67.02\% and 800 \textdegree C reaches only 66.02\%.
 
-Such result in system performance originates from the effect of AOGR ratio and stack inlet temperature on stack voltage.
-As shown in Fig.~\ref{fig:temperature-map}(b), the cell voltage at any given AOGR ratio exhibits a non-monotonic dependence on stack inlet temperature: it first increases from 600\textdegree C to an intermediate maximum and then decreases again toward 800\textdegree C.
+Such result in system performance originates from the effect of AOGR ratio and \(T_{stack}\) on stack voltage.
+As shown in Fig.~\ref{fig:temperature-map}(b), the cell voltage at any given AOGR ratio exhibits a non-monotonic dependence on \(T_{stack}\): it first increases from 600\textdegree C to an intermediate maximum and then decreases again toward 800\textdegree C.
 The location of this maximum, however, shifts to lower temperatures as the AOGR ratio increases.
 At zero recirculation, the cell voltage peaks broadly across the 700--750 \textdegree C range, with the two temperatures yielding nearly identical voltage values of 0.9541 V and 0.9542 V.
 As the AOGR ratio increases, the peak gradually narrows and migrates toward 700 \textdegree C: at the maximum allowable AOGR ratio, the cell voltage at 700 \textdegree C (0.8807 V) clearly exceeds that at 750 \textdegree C (0.8779 V), even though the two values were essentially indistinguishable at zero recirculation.
-Reflecting this temperature-dependent penalty, the cumulative voltage drops incurred over the full AOGR sweep increases monotonically with stack inlet temperature, from 68.5 mV at 600 \textdegree C to 73.3 mV at 700 \textdegree C, 76.3 mV at 750 \textdegree C, and 79.1 mV at 800 \textdegree C, even though the maximum available AOGR ratio is lower at a high stack inlet temperature.
-This trend confirms that anode off-gas recirculation introduces a temperature-dependent penalty mechanism whose magnitude grows with the AOGR ratio and disproportionately affects the higher-temperature operating points.
+Reflecting this temperature-dependent penalty, the cumulative voltage drops incurred over the full AOGR sweep increases monotonically with \(T_{stack}\), from 68.5 mV at 600 \textdegree C to 73.3 mV at 700 \textdegree C, 76.3 mV at 750 \textdegree C, and 79.1 mV at 800 \textdegree C, even though the maximum available AOGR ratio is lower at a high \(T_{stack}\).
+This trend confirms that AOGR introduces a temperature-dependent penalty mechanism whose magnitude grows with the AOGR ratio and disproportionately affects the higher-temperature operating points.
 
 \begin{figure*}[width=\textwidth,pos=!t]
 \centering
@@ -757,7 +758,7 @@ This trend confirms that anode off-gas recirculation introduces a temperature-de
 \includegraphics[width=\linewidth]{image14.png}
 \caption{}
 \end{subfigure}%
-\caption{Performance map showing (a) efficiency and power density and (b) voltage as a function of stack inlet temperature and AOGR ratio.}
+\caption{Performance map showing (a) efficiency and power density and (b) voltage as a function of \(T_{stack}\) and AOGR ratio.}
 \label{fig:temperature-map}
 \end{figure*}
 
@@ -766,26 +767,26 @@ The reversible cell voltage of the SOFC is given by Eq.~\eqref{eq:nernst} where 
 As the AOGR ratio increases, the recirculated stream depletes hydrogen partial pressure \(p_{H_{2}}\) and enriches the steam partial pressure \(p_{H_{2}O}\) at the stack anode inlet, which reduces the partial pressure ratio inside the logarithm to a value below unity and renders the logarithmic argument increasingly negative in sign.
 Therefore, at higher AOGR ratios, a given temperature increment produces a larger reduction in the Nernstian term and therefore a steeper decline in the OCV.
 To quantify the amplification of the OCV-reduction effect with the AOGR ratio, the magnitude of the OCV temperature sensitivity, \(\left|dOCV/dT\right|\), is shown in Supplementary Figure SX.
-This finding suggests that the design and operation of NH$_3$-fueled SOFC systems incorporating anode off-gas recirculation should explicitly account for the coupling between the AOGR ratio and the stack inlet temperature, rather than treating the two parameters as independently optimizable variables.
-In particular, when high recirculation ratios are desired for system efficiency reasons, operating the stack at moderately high temperatures yields superior overall performance compared to operating at the upper end of the temperature range.
+This finding suggests that the design and operation of NH$_3$-fueled SOFC systems incorporating AOGR should explicitly account for the coupling between the AOGR ratio and \(T_{stack}\), rather than treating the two parameters as independently optimizable variables.
+In particular, when high AOGR ratios are desired for system efficiency reasons, operating the stack at moderately high temperatures yields superior overall performance compared to operating at the upper end of the temperature range.
 
 \section{Conclusions}
 
 A comprehensive parametric investigation of an ammonia-fueled SOFC system incorporating anode off-gas recirculation (AOGR) was conducted to clarify both the operating limits imposed on the AOGR ratio and the influence of the AOGR ratio on the overall system performance.
-An integrated thermodynamic system model based on validated component models---including a 1-D SOFC stack, shell-and-tube heat exchanger, packed-bed ammonia reformer, and critical-mode ejector---was constructed, and three operating parameters (fuel utilization, current density, and stack inlet temperature) were systematically varied together with the AOGR ratio.
+An integrated thermodynamic system model based on validated component models---including a 1-D SOFC stack, shell-and-tube heat exchanger, packed-bed ammonia reformer, and critical-mode ejector---was constructed, and three operating parameters (\({FU}_{stack}\), \emph{j}, and \(T_{stack}\)) were systematically varied together with the AOGR ratio.
 The principal findings are summarized as follows.
 
 \begin{itemize}
 \item The maximum allowable AOGR ratio is governed by the pressure-balance constraint of the AOGR loop, in which the ejector pressure lift must overcome the cumulative pressure drops along the recirculation path.
-Increasing fuel utilization expands this limit modestly by reducing the cracker cold-side pressure drop, whereas increasing current density narrows it substantially due to the larger anode-side flow rate and the longer cracker length required to meet the elevated heat-duty demand.
-\item Stack inlet temperature limits the maximum allowable AOGR ratio through a fundamentally distinct mechanism.
+Increasing \({FU}_{stack}\) expands this limit modestly by reducing the cracker cold-side pressure drop, whereas increasing \emph{j} narrows it substantially due to the larger anode-side flow rate and the longer cracker length required to meet the elevated heat-duty demand.
+\item \(T_{stack}\) limits the maximum allowable AOGR ratio through a fundamentally distinct mechanism.
 The elevated entrained flow temperature degrades the entrainment and pressure lift performance of the ejector, thereby reducing the maximum allowable AOGR ratio more sharply than what the pressure drop alone would predict.
-\item Under varying fuel utilization, the AOGR ratio induces a strongly asymmetric trade-off: the efficiency gain is highly sensitive to fuel utilization, whereas the power density penalty remains nearly insensitive to it.
-AOGR is therefore most advantageous at low fuel utilization, where a substantial efficiency improvement is achieved at the same power density cost as at high fuel utilization.
-\item Under varying current density, the dominant trade-off shifts from the stack level to the balance-of-plant level, giving rise to a non-monotonic efficiency trajectory at high current density.
+\item Under varying \({FU}_{stack}\), the AOGR ratio induces a strongly asymmetric trade-off: the efficiency gain is highly sensitive to \({FU}_{stack}\), whereas the power density penalty remains nearly insensitive to it.
+AOGR is therefore most advantageous at low \({FU}_{stack}\), where a substantial efficiency improvement is achieved at the same power density cost as at high \({FU}_{stack}\).
+\item Under varying \emph{j}, the dominant trade-off shifts from the stack level to the balance-of-plant level, giving rise to a non-monotonic efficiency trajectory at high \emph{j}.
 The air blower parasitic power, amplified by the elevated air flow rate and the increased BoP pressure drops, eventually overcomes the benefit of reduced fuel input.
 Consequently, the optimal AOGR ratio lies below the maximum allowable value identified from the pressure-balance constraint.
-\item Under varying stack inlet temperature, the optimal operating temperature shifts downward as the AOGR ratio increases, since the AOGR-induced enrichment of steam at the anode inlet amplifies the OCV temperature sensitivity.
+\item Under varying \(T_{stack}\), the optimal operating temperature shifts downward as the AOGR ratio increases, since the AOGR-induced enrichment of steam at the anode inlet amplifies the OCV temperature sensitivity.
 The resulting steeper OCV decline at higher temperatures overwhelms the modest overpotential reduction available under low-current-density operation, so that operation at the upper end of the investigated temperature range no longer yields the best performance under high AOGR conditions.
 \end{itemize}
 
