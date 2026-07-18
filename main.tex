@@ -586,19 +586,18 @@ The origin of this asymmetry can be explained by the AOGR-induced reduction in t
 Under steady-state operation, the mass flow rate of ammonia required at the system inlet to sustain a target \({FU}_{stack}\) is given by Eq.~\eqref{eq:fuel-flow}.
 
 The first parenthetical term on the right-hand side represents the stoichiometric fuel consumption rate, while the second term,
-\(\left( 1 - r(1 - FU_{stack}) \right)\), captures the effect of
-recirculation on the system-level fuel demand.
+\(\left( 1 - r(1 - FU_{stack}) \right)\), captures the effect of AOGR on the system-level fuel demand.
 Since
 \(\left( 1-FU_{stack} \right)\)is the unutilized fuel fraction exiting
-the stack, the term \(r(1 - FU_{stack})\)quantifies the amount of unreacted fuel recovered through recirculation.
+the stack, the term \(r(1 - FU_{stack})\) quantifies the amount of unreacted fuel recovered through recirculation.
 At low \({FU}_{stack}\), a substantial fraction of unreacted fuel is available for recovery, so even modest AOGR ratios significantly reduce the fresh fuel demand.
 At high \({FU}_{stack}\), the recoverable amount is limited and AOGR provides only marginal savings.
-As shown in Fig.~\ref{fig:fuel-utilization-map}(b), at FU = 40\% the system fuel input expressed in terms of thermal energy decreases dramatically from 157.6 kW to 95.7 kW, whereas at FU = 80\% it decreases only from 78.8 kW to 68.2 kW---a disparity that directly translates into the efficiency gain disparity observed in Fig.~\ref{fig:fuel-utilization-map}(a).
+As shown in Fig.~\ref{fig:fuel-utilization-map}(b), at \({FU}_{stack}\) = 40\% the system fuel input expressed in terms of thermal energy decreases dramatically from 157.6 kW to 95.7 kW, whereas at \({FU}_{stack}\) = 80\% it decreases only from 78.8 kW to 68.2 kW---a disparity that directly translates into the efficiency gain disparity observed in Fig.~\ref{fig:fuel-utilization-map}(a).
 
 In contrast, the stack power density penalty associated with AOGR is nearly independent of \({FU}_{stack}\).
 As the AOGR ratio increases, the recirculated stream---rich in N$_2$ and H$_2$O---dilutes the fresh decomposed fuel and lowers the hydrogen partial pressure at the stack anode inlet.
 According to the Nernst equation, this reduction suppresses the open circuit voltage (OCV) and consequently the cell voltage.
-As shown in Fig.~\ref{fig:fuel-utilization-map}(c), increasing the AOGR ratio from 0\% to its maximum value reduces the cell voltage from 0.941 V to 0.878 V at FU = 40\% (a drop of 0.063 V), and from 0.903 V to 0.832 V at FU = 80\% (a drop of 0.071 V).
+As shown in Fig.~\ref{fig:fuel-utilization-map}(c), increasing the AOGR ratio from 0\% to its maximum value reduces the cell voltage from 0.941 V to 0.878 V at \({FU}_{stack}\) = 40\% (a drop of 0.063 V), and from 0.903 V to 0.832 V at \({FU}_{stack}\) = 80\% (a drop of 0.071 V).
 The two voltage drops differ by less than 10 mV, indicating that the AOGR-induced voltage degradation is essentially comparable across the \({FU}_{stack}\) range.
 This near-uniform behavior arises because the fuel dilution effect due to AOGR occurs in a similar magnitude among different \({FU}_{stack}\) values.
 Consistent with this, the resulting power density reductions---from 0.188 W/cm\textsuperscript{2} to 0.176 W/cm\textsuperscript{2} at FU = 40\% and from 0.181 W/cm\textsuperscript{2} to 0.166 W/cm\textsuperscript{2} at FU = 80\%---differ by only 0.003 W/cm\textsuperscript{2}.
@@ -633,7 +632,6 @@ System performance was next examined under varying \emph{j} and AOGR ratio, and 
 At a low \emph{j} of 0.1 A/cm\textsuperscript{2}, increasing the AOGR ratio from 0\% to its maximum allowable value of 67.3\% improves the system efficiency from 60.7\% to 69.9\%, corresponding to an absolute gain of 9.2 percentage points.
 At a high \emph{j} of 0.5 A/cm\textsuperscript{2}, however, the same operation only enhances the efficiency from 46.3\% to 49.8\%, yielding a much smaller gain of 3.5 percentage points.
 Notably, the iso-\emph{j} trajectories at high \emph{j} exhibit a non-monotonic behavior: at 0.5 A/cm\textsuperscript{2}, the system efficiency increases with the AOGR ratio up to approximately 60\%, but then decreases as the AOGR ratio is further raised toward its maximum allowable value.
-This reversal is not observed at low \emph{j} conditions, where the efficiency rises monotonically across the entire feasible range of the AOGR ratio.
 The existence of an internal optimum at high \emph{j} indicates that AOGR introduces a competing penalty that becomes increasingly dominant as \emph{j} increases.
 
 In contrast, the trend in stack power density with increasing AOGR ratio is far less sensitive to \emph{j}.
@@ -674,24 +672,26 @@ p_{air\,blower} = 1\,\mathrm{atm} &+ \Delta p_{stack} + \Delta p_{cracker,hot} \
 \end{equation}
 
 where \(\Delta p_{stack}\) is the pressure drop across the SOFC stack cathode channel, \(\Delta p_{cracker,hot}\) is the pressure drop across the hot side of the fuel cracker, and \(\Delta p_{air\,HX,hot}\) is the pressure drop across the hot side of the air heat exchanger.
-As AOGR ratio increases, the pressure drops occurring at the heat exchanger and fuel cracker are amplified as pressure drops are calculated based on the shell and tubes' dimensional parameters and internal fluid properties, while the SOFC stack channel pressure dop is determined almost constant as 0.5\% of the fluid pressure.
+The flow path of fluid to be pressurized by the air blower is represented in supplementary figure XX.
+As AOGR ratio increases, the pressure drops occurring at the heat exchanger and fuel cracker are amplified, while the SOFC stack channel pressure dop is determined almost constant as 0.5\% of the fluid pressure.
 First, the pressure drop on the hot side of the fuel cracker rises through a more subtle mechanism than a simple increase in the cold-side flow rate.
 With increasing AOGR ratio, the mass flow rate of fresh ammonia entering the cracker cold inlet decreases, since a larger fraction of the stack inlet fuel demand is met by recirculated unreacted fuel.
 This reduction in ammonia content moderately lowers the heat duty required for the endothermic NH$_3$ decomposition reaction.
 However, the AOGR ratio simultaneously raises the temperature of the cracker cold inlet stream, because the recirculated anode off-gas---returning at a high temperature---constitutes an increasingly large fraction of the cold stream.
 Since the cracker hot stream inlet temperature is essentially fixed as the stack cathode off gas temperature, the elevated cold-side temperature causes the log-mean temperature difference (LMTD) across the cracker to decrease substantially.
 Because the LMTD reduction outweighs the moderate decrease in the heat duty, the mass flow rate of the hot stream required to satisfy the heat balance must increase, leading to a higher pressure drop \(\Delta p_{Cracker,hot}\)on the hot side of the fuel cracker.
+The corresponding data of LMTD and heat duty at the fuel cracker is provided in supplementary table XX for different AOGR ratio operation.
 Second, the pressure drop on the hot side of the air heat exchanger rises through a chain of effects originating from the stack inlet-outlet temperature difference boundary condition.
-In SOFC operation, the cathode air flow rate is determined by the boundary condition that the temperature difference between the stack inlet and outlet must remain at 100\textdegree C, which is imposed to prevent excessive thermal gradients across the cell and to maintain mechanical integrity of the stack.
+In SOFC operation, the cathode air flow rate is determined by the boundary condition that the temperature difference between the stack inlet and outlet must remain at 100\textdegree C.
 As discussed earlier, increasing the AOGR ratio reduces the cell operating voltage and consequently lowers the stack power generation.
-Since the total chemical energy released by the electrochemical reaction is partitioned between electrical work and heat, a reduction in the electrical power output translates directly into an increase in the heat that must be removed from the stack to maintain the prescribed inlet--outlet temperature difference.
+Since the total chemical energy released by the electrochemical reaction is partitioned between electrical work and heat, a reduction in the electrical power output translates directly into an increase in the heat that must be removed from the anode to maintain the prescribed inlet--outlet temperature difference.
 To dissipate this additional heat, the cathode air flow rate must therefore be increased.
 This larger air flow rate elevates the heat capacity flow rate (\(\dot{m}C_{p}\)) on the cold side of the air heat exchanger, which receives the cathode air at ambient temperature and heats it up to \(T_{stack}\).
 Since the cold stream now carries a greater thermal load to be transferred from the hot stream, and since the cold-side outlet temperature must remain fixed at the \(T_{stack}\) setpoint, the mass flow rate of the hot stream supplying the air heat exchanger must also increase to satisfy the heat balance.
 Consequently, \(\Delta p_{air\text{\,}HX,hot}\) grows with the AOGR ratio.
 Combined with the direct increase in air flow rate through the blower itself, these compounding effects cause the air blower parasitic power to grow rapidly with the AOGR ratio.
 
-The relative impact of this parasitic power growth on the overall system efficiency depends strongly on the operating \emph{j}, since the absolute magnitude of both the air flow rate and the pressure drops occurring at the heat exchanger and fuel cracker scales with \emph{j}.
+The relative impact of this parasitic power growth on the overall system efficiency depends strongly on the operating \emph{j}, since the absolute magnitude of both air flow rate and pressure drops occurring at the heat exchanger and fuel cracker scales with \emph{j}.
 As summarized in Table~\ref{tab:parasitic-power}, at a low \emph{j} of 0.1 A/cm\textsuperscript{2}, the air blower parasitic power increases from 0.31 kW at zero recirculation to 0.52 kW at the maximum AOGR ratio, accompanied by an increase in \(\Delta p_{Cracker,hot}\)from 1.83 kPa to 3.20 kPa and in
 \(\Delta p_{air\text{\,}HX,hot}\)from 1.92 kPa to 3.04 kPa. 
 Although the absolute increase in parasitic power ($\approx$210 W) is non-negligible, it remains a minor fraction of the gross stack power output, corresponding to approximately 1\% of the gross power generated under this operating condition.
@@ -766,7 +766,7 @@ The origin of this behavior can be explained by the dependence of equilibrium po
 The reversible cell voltage of the SOFC is given by Eq.~\eqref{eq:nernst} where the second term on the right-hand side---the Nernstian term---is responsible for the temperature dependence of the OCV under the operating conditions of interest.
 As the AOGR ratio increases, the recirculated stream depletes hydrogen partial pressure \(p_{H_{2}}\) and enriches the steam partial pressure \(p_{H_{2}O}\) at the stack anode inlet, which reduces the partial pressure ratio inside the logarithm to a value below unity and renders the logarithmic argument increasingly negative in sign.
 Therefore, at higher AOGR ratios, a given temperature increment produces a larger reduction in the Nernstian term and therefore a steeper decline in the OCV.
-To quantify the amplification of the OCV-reduction effect with the AOGR ratio, the magnitude of the OCV temperature sensitivity, \(\left|dOCV/dT\right|\), is shown in Supplementary Figure SX.
+To quantify the amplification of the OCV-reduction effect with AOGR, the magnitude of the OCV temperature sensitivity, \(\left|dOCV/dT\right|\), is shown in Supplementary Figure SX.
 This finding suggests that the design and operation of NH$_3$-fueled SOFC systems incorporating AOGR should explicitly account for the coupling between the AOGR ratio and \(T_{stack}\), rather than treating the two parameters as independently optimizable variables.
 In particular, when high AOGR ratios are desired for system efficiency reasons, operating the stack at moderately high temperatures yields superior overall performance compared to operating at the upper end of the temperature range.
 
