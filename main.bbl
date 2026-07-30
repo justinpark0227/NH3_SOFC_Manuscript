@@ -133,42 +133,56 @@ B.~Todd, J.~Young, \href{https://www.sciencedirect.com/science/article/pii/S0378
 \bibitem{moran2017moran}
 M.~J. Moran, H.~N. Shapiro, D.~D. Boettner, M.~B. Bailey, Moran's principles of engineering thermodynamics, (No Title) (2017).
 
-\bibitem{MIN2020112614}
-G.~Min, Y.~J. Park, J.~Hong, \href{https://www.sciencedirect.com/science/article/pii/S0196890420301527}{1d thermodynamic modeling for a solid oxide fuel cell stack and parametric study for its optimal operating conditions}, Energy Conversion and Management 209 (2020) 112614.
-\newblock \href {https://doi.org/https://doi.org/10.1016/j.enconman.2020.112614} {\path{doi:https://doi.org/10.1016/j.enconman.2020.112614}}.
-\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0196890420301527}
+\bibitem{lee2023sofc}
+J.~Lee, Thermodynamic design and analysis of ammonia-fueled solid oxide fuel cell system depending on ammonia decomposition types (2023).
 
-\bibitem{fuerte2009ammonia}
-A.~Fuerte, R.~X. Valenzuela, M.~J. Escudero, L.~Daza, Ammonia as efficient fuel for sofc, Journal of Power Sources 192~(1) (2009) 170--174.
+\bibitem{PARK2019351}
+Y.~J. Park, G.~Min, J.~Hong, \href{https://www.sciencedirect.com/science/article/pii/S0196890418314134}{Comparative study of solid oxide fuel cell-combined heat and power system designs for optimal thermal integration}, Energy Conversion and Management 182 (2019) 351--368.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.enconman.2018.12.068} {\path{doi:https://doi.org/10.1016/j.enconman.2018.12.068}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0196890418314134}
 
-\bibitem{lucentini2019catalytic}
-I.~Lucentini, A.~Casanovas, J.~Llorca, Catalytic ammonia decomposition for hydrogen production on ni, ru and niru supported on ceo2, International journal of hydrogen energy 44~(25) (2019) 12693--12707.
+\bibitem{FUERTE2009170}
+A.~Fuerte, R.~Valenzuela, M.~Escudero, L.~Daza, \href{https://www.sciencedirect.com/science/article/pii/S0378775308021873}{Ammonia as efficient fuel for sofc}, Journal of Power Sources 192~(1) (2009) 170--174, cONAPPICE 2008, Zaragoza, Spain, 24-26 September 2008.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.jpowsour.2008.11.037} {\path{doi:https://doi.org/10.1016/j.jpowsour.2008.11.037}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0378775308021873}
 
-\bibitem{maffei2008high}
-N.~Maffei, L.~Pelletier, A.~McFarlan, A high performance direct ammonia fuel cell using a mixed ionic and electronic conducting anode, Journal of power sources 175~(1) (2008) 221--225.
+\bibitem{LUCENTINI201912693}
+I.~Lucentini, A.~Casanovas, J.~Llorca, \href{https://www.sciencedirect.com/science/article/pii/S0360319919302861}{Catalytic ammonia decomposition for hydrogen production on ni, ru and niru supported on ceo2}, International Journal of Hydrogen Energy 44~(25) (2019) 12693--12707, special Issue on Selected Contributions from the European Hydrogen Energy Conference 2018. Málaga, Spain. March 14th - 16th.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.ijhydene.2019.01.154} {\path{doi:https://doi.org/10.1016/j.ijhydene.2019.01.154}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0360319919302861}
 
-\bibitem{park2019comparative}
-Y.~J. Park, G.~Min, J.~Hong, Comparative study of solid oxide fuel cell-combined heat and power system designs for optimal thermal integration, Energy Conversion and Management 182 (2019) 351--368.
+\bibitem{MAFFEI2008221}
+N.~Maffei, L.~Pelletier, A.~McFarlan, \href{https://www.sciencedirect.com/science/article/pii/S0378775307019933}{A high performance direct ammonia fuel cell using a mixed ionic and electronic conducting anode}, Journal of Power Sources 175~(1) (2008) 221--225.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.jpowsour.2007.09.040} {\path{doi:https://doi.org/10.1016/j.jpowsour.2007.09.040}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0378775307019933}
 
 \bibitem{PARK2023232970}
 Y.~J. Park, G.~Min, J.~Hong, \href{https://www.sciencedirect.com/science/article/pii/S0378775323003452}{Optimal method for the anode exhaust gas recycling of atmospheric solid oxide fuel cell-combined heat and power systems}, Journal of Power Sources 567 (2023) 232970.
 \newblock \href {https://doi.org/https://doi.org/10.1016/j.jpowsour.2023.232970} {\path{doi:https://doi.org/10.1016/j.jpowsour.2023.232970}}.
 \newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0378775323003452}
 
-\bibitem{marsano2004ejector}
-F.~Marsano, L.~Magistri, A.~Massardo, Ejector performance influence on a solid oxide fuel cell anodic recirculation system, Journal of Power Sources 129~(2) (2004) 216--228.
+\bibitem{MARSANO2004216}
+F.~Marsano, L.~Magistri, A.~Massardo, \href{https://www.sciencedirect.com/science/article/pii/S037877530301125X}{Ejector performance influence on a solid oxide fuel cell anodic recirculation system}, Journal of Power Sources 129~(2) (2004) 216--228.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.jpowsour.2003.11.034} {\path{doi:https://doi.org/10.1016/j.jpowsour.2003.11.034}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S037877530301125X}
 
-\bibitem{ozden2010shell}
-E.~Ozden, I.~Tari, Shell side cfd analysis of a small shell-and-tube heat exchanger, Energy conversion and management 51~(5) (2010) 1004--1014.
+\bibitem{OZDEN20101004}
+E.~Ozden, I.~Tari, \href{https://www.sciencedirect.com/science/article/pii/S0196890409005020}{Shell side cfd analysis of a small shell-and-tube heat exchanger}, Energy Conversion and Management 51~(5) (2010) 1004--1014.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.enconman.2009.12.003} {\path{doi:https://doi.org/10.1016/j.enconman.2009.12.003}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0196890409005020}
 
 \bibitem{DNV2023AmmoniaMarineFuelHandbook}
 {DNV}, {Ammonia as a Marine Fuel Safety Handbook}, Tech. Rep. Rev. 02, {Green Shipping Programme}, developed by DNV on behalf of the Green Shipping Programme, with input from the Norwegian Maritime Authority (Jun. 2023).
 
-\bibitem{seidler2011pressurized}
-S.~Seidler, M.~Henke, J.~Kallo, W.~G. Bessler, U.~Maier, K.~A. Friedrich, Pressurized solid oxide fuel cells: Experimental studies and modeling, Journal of Power Sources 196~(17) (2011) 7195--7202.
+\bibitem{SEIDLER20117195}
+S.~Seidler, M.~Henke, J.~Kallo, W.~G. Bessler, U.~Maier, K.~A. Friedrich, \href{https://www.sciencedirect.com/science/article/pii/S0378775310017076}{Pressurized solid oxide fuel cells: Experimental studies and modeling}, Journal of Power Sources 196~(17) (2011) 7195--7202, proceedings of 2010 European Solid Oxide Fuel Cell Forum.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.jpowsour.2010.09.100} {\path{doi:https://doi.org/10.1016/j.jpowsour.2010.09.100}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0378775310017076}
 
-\bibitem{cinti2023design}
-G.~Cinti, V.~Liso, S.~S. Araya, Design improvements for ammonia-fed sofc systems through power rating, cascade design and fuel recirculation, International Journal of Hydrogen Energy 48~(40) (2023) 15269--15279.
+\bibitem{CINTI202315269}
+G.~Cinti, V.~Liso, S.~S. Araya, \href{https://www.sciencedirect.com/science/article/pii/S0360319923000113}{Design improvements for ammonia-fed sofc systems through power rating, cascade design and fuel recirculation}, International Journal of Hydrogen Energy 48~(40) (2023) 15269--15279.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.ijhydene.2023.01.008} {\path{doi:https://doi.org/10.1016/j.ijhydene.2023.01.008}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0360319923000113}
 
 \bibitem{thulukkanam2000heat}
 K.~Thulukkanam, Heat exchanger design handbook, CRC press, 2000.
@@ -179,10 +193,17 @@ S.~Kaka{\c{c}}, H.~Liu, A.~Pramuanjaroenkij, Heat exchangers: selection, rating,
 \bibitem{thome2006wolverine}
 J.~R. Thome, Wolverine engineering databook iii (2006).
 
-\bibitem{wang2017experimental}
-L.~Wang, C.~Wang, W.~Hou, H.~Zhao, H.~Zhang, Experimental investigation on ejector performance near critical back pressure, International journal of refrigeration 80 (2017) 158--168.
+\bibitem{edwards2008design}
+J.~E. Edwards, Design and rating shell and tube heat exchangers, Teesside, Ukraine (2008).
 
-\bibitem{liang2025numerical}
-T.~Liang, Y.~Wang, D.~Zhang, Z.~Li, W.~Ye, G.~Li, W.~Xu, Numerical investigation on the mixing process within the two-strut supersonic ejector, International Journal of Heat and Fluid Flow 116 (2025) 109984.
+\bibitem{WANG2017158}
+L.~Wang, C.~Wang, W.~Hou, H.~Zhao, H.~Zhang, \href{https://www.sciencedirect.com/science/article/pii/S0140700717301998}{Experimental investigation on ejector performance near critical back pressure}, International Journal of Refrigeration 80 (2017) 158--168.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.ijrefrig.2017.05.010} {\path{doi:https://doi.org/10.1016/j.ijrefrig.2017.05.010}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0140700717301998}
+
+\bibitem{LIANG2025109984}
+T.~Liang, Y.~Wang, D.~Zhang, Z.~Li, W.~Ye, G.~Li, W.~Xu, \href{https://www.sciencedirect.com/science/article/pii/S0142727X25002425}{Numerical investigation on the mixing process within the two-strut supersonic ejector}, International Journal of Heat and Fluid Flow 116 (2025) 109984.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.ijheatfluidflow.2025.109984} {\path{doi:https://doi.org/10.1016/j.ijheatfluidflow.2025.109984}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0142727X25002425}
 
 \end{thebibliography}

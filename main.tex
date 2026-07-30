@@ -64,7 +64,7 @@
 Ammonia-fueled solid oxide fuel cell (SOFC) systems with anode off-gas recirculation (AOGR) offer high efficiency for marine power generation, but their performance is strongly coupled to operating conditions and the AOGR ratio.
 However, previous studies have generally treated AOGR ratio as a freely adjustable design input rather than a physically constrained outcome, and have examined its effect along a single operating axis.
 This study addresses these limitations by identifying the physically attainable maximum AOGR ratio and quantifying its interaction with operating conditions through a two-dimensional parametric study spanning fuel utilization, current density, and stack inlet temperature. 
-The analysis was conducted using an integrated thermodynamic system model incorporating validated component models, implemented within an in-house thermodynamic simulator.
+The analysis was conducted using an integrated thermodynamic system model incorporating validated component models, implemented within a commercial thermodynamic simulator (H-Twin\textsuperscript{\textregistered}).
 Results show that increasing fuel utilization from 40\% to 80\% raises the maximum AOGR ratio from 65.4\% to 66.9\%, whereas increasing current density from 0.1 to 0.5 A/cm² lowers it from 67.3\% to 62.0\%. 
 Elevated stack inlet temperature further restricts this limit by degrading ejector entrainment performance. 
 The AOGR ratio consistently improves efficiency while reducing power density, with the largest efficiency gains occurring at low fuel utilization. 
@@ -117,7 +117,7 @@ Sun et al.~\cite{SUN2023117804} conducted a parametric study to analyze how oper
 Oh et al.~\cite{OH2024235241}  also conducted a parametric study to find the optimal operating condition of an ammonia fueled-SOFC system undergoing AOGR, integrated with an organic Rankine cycle.
 
 However, while previous studies focus on proposing high-efficiency system architectures, they tend to lack practical thermodynamic considerations in system evaluation regarding AOGR.
-First, prior studies consider AOGR ratio as an independently adjustable operating variable, whereas in practice an upper bound may exist due to physical constraints \cite{SELVAM2021114839, QUACH2022119718, SUN2023117804, OH2024235241}.
+First, prior studies consider AOGR ratio as an independently adjustable operating variable, whereas in practice an upper bound may exist due to physical constraints such as pressure drops in BoPs \cite{SELVAM2021114839, QUACH2022119718, SUN2023117804, OH2024235241}.
 Second, the influence of AOGR ratio has typically been examined along a single operating axis at a fixed fuel utilization or current density, leaving the coupling between AOGR ratio and other operating variables unexplored \cite{QUACH2022119718, SUN2023117804, OH2024235241}.
 Third, prior studies either do not account for or assume a designated value for pressure drop effects at heat exchangers \cite{SELVAM2021114839, BAKALA2024952, QUACH2022119718, SUN2023117804, OH2024235241}.
 Furthermore, in systems utilizing an ejector for AOGR, the ejector model is overly simplified as a component which mixes two streams and pressurizes the entrained flow by a fixed pressure ratio \cite{SUN2023117804}.
@@ -127,26 +127,26 @@ To address such limitations, the present study pursues the following research ob
 \begin{itemize}
 \item The physically attainable maximum AOGR ratio is identified as an endogenous outcome of component level hydrodynamics under varying stack inlet temperature, fuel utilization, and current density, rather than being prescribed as an external design input.
 \item A two-dimensional parametric study is conducted in a system level to reveal how the AOGR ratio couples with each operating variables, thereby analyzing the mechanisms by which the AOGR ratio influences overall system performance under realistic operating conditions.
-\item A high-fidelity ammonia-fueled SOFC system model is developed using an in-house simulator, in which pressure drops across balance-of-plant components are evaluated through empirical correlation based physical models accounting for design variables, and the AOGR is described by a reliable one-dimensional ejector model that captures the entrainment-pressure-lift behavior.
+\item A high-fidelity ammonia-fueled SOFC system model is developed, in which pressure drops across balance-of-plant components are evaluated through empirical correlation based physical models accounting for design variables, and the AOGR is described by a reliable one-dimensional ejector model that captures the entrainment-pressure-lift behavior.
 \end{itemize}
 
 \section{Thermodynamic Component Modeling Methodology}
 
-To study the performance of ammonia -- fueled SOFC systems under various operating conditions, thermodynamic systems were computationally modelled and analyzed via numerical simulation.
-Numerical simulations were conducted via an in-house solid oxide cell system simulator developed in C\# language, H-Twin\textsuperscript{\textregistered} (H-Cube Solutions).
+To study the performance of ammonia-fueled SOFC systems under various operating conditions, thermodynamic systems were computationally modelled and analyzed via numerical simulation.
+Numerical simulations were conducted via a commercial solid oxide cell system simulator, H-Twin\textsuperscript{\textregistered} (H-Cube Solutions).
 The thermodynamic systems consisted of system components, fluid streams, and an integrated system.
-An integrated system was assembled by a set of system components which are connected by fluid streams represented by thermodynamic properties including mass flow rate (\(\dot{m})\), temperature \((T)\), pressure \((p)\) and chemical composition \((x)\).
-The system components of an ammonia -- fueled SOFC system include SOFC stack, heat exchanger, ammonia reformer, combustor, blower, etc.
-In addition, if the system undergoes AOGR, an ejector is also included to induce suction of the relatively low-pressure anode off -- gas.
-Thermodynamic properties are calculated for each stream via a steady -- state numerical solver, where each system component calculates the thermodynamic properties of its outlet stream as the output, given the inlet stream and its design configurations as the input.
+An integrated system was assembled by a set of system components which are connected by fluid streams represented by thermodynamic properties including mass flow rate (\(\dot{m})\), temperature \((T)\), pressure \((p)\) and chemical composition \((y_i)\).
+The system components of an ammonia-fueled SOFC system include SOFC stack, heat exchanger, ammonia reformer, combustor, blower, etc.
+In addition, if the system undergoes AOGR, an ejector is also included to induce suction of the relatively low-pressure anode off-gas.
+Thermodynamic properties are calculated for each stream via a steady-state numerical solver, where each system component calculates the thermodynamic properties of its outlet stream as the output, given the inlet stream and its design configurations as the input.
 Numerical values of thermodynamic properties were acquired from the following sources: thermodynamic properties of water~\cite{Wagner2008}, specific heat capacities of gases~\cite{Smith1999GRIMech30}, thermal conductivity and dynamic viscosity of gases~\cite{TODD2002186}, and enthalpy of formation of gases~\cite{moran2017moran}.
 Design configuration of system components include geometrical design variables and operational parameters.
-For example, in the case of SOFC stack, geometrical design variables such as cell dimensions, fluid channel dimensions and operational parameters such as current density are determined as design configurations.
+For example, in the case of SOFC stack, geometrical design variables such as cell dimensions and operational parameters such as current density are determined as design configurations.
 Together with the design configurations and thermodynamic properties of its cathode/anode inlet stream as the input, the thermodynamic properties of its outlet streams and voltage, power generation values are calculated as the output by solving internal electrochemistry and mass/energy balance equations.
 Throughout the study, key assumptions applied are as follows:
 
 \begin{itemize}
-\item For chemical species, only H$_2$, H$_2$O, CO, CO$_2$, O$_2$, N$_2$, CH$_4$, NH$_3$ are considered.
+\item For chemical species, only H$_2$, H$_2$O, O$_2$, N$_2$, NH$_3$ are considered.
 \item For the equation of state, only H$_2$O is modeled as a real gas while other gases are modeled as ideal gases.
 \item In energy conservation, kinetic and potential energy are neglected.
 \item All system components assume an adiabatic condition between the component and the environment.
@@ -158,7 +158,7 @@ Throughout the study, key assumptions applied are as follows:
 
 \subsection{SOFC Stack}
 
-A 1 -- dimensional model of SOFC stack developed by Min et al.~\cite{MIN2020112614} was exploited to calculate the voltage, power generation and thermodynamic properties of its outlet streams.
+A 1 -- dimensional model of SOFC stack developed by Lee~\cite{lee2023sofc} was exploited to calculate the voltage, power generation and thermodynamic properties of its outlet streams.
 The model considers discretized sections of a SOFC stack in the direction of fuel flow and solves complete analytical expressions of electrochemical, thermodynamic relations for each section to derive its output parameters.
 Given the input parameters, internal electrochemical reaction is solved and the local value of voltage of each section is calculated by the following equations.
 
@@ -167,49 +167,49 @@ V &= E_{rev} - \eta_{act,a} - \eta_{act,c} - \eta_{ohm} - \eta_{conc,a} - \eta_{
 E_{rev} &= \  - \frac{\mathrm{\Delta}G{^\circ}}{2F} + \frac{RT}{2F}\ln\left( \frac{p_{H_{2}}{p_{O_{2}}}^{\frac{1}{2}}}{p_{H_{2}O}} \right) \label{eq:nernst}
 \end{align}
 
-Detailed equations and parameters of overpotentials are provided in \cite{MIN2020112614}.
+Detailed equations and parameters of overpotentials are provided in \cite{lee2023sofc}.
+The model was validated against experimental data for two fuel conditions: pure ammonia and a 1:3 \({N}_{2}\)/\({H}_{2}\) mixture representing fully decomposed ammonia.
 The calculated values of voltage at each section are averaged to derive the final voltage of the stack.
-Based on the value of voltage, design configurations and operational parameters of the stack, gross power generation is calculated by the following equation.
+Based on the value of voltage, design configurations and operational parameters of the stack, gross power generation ($\dot{W}_{\mathrm{gross}}$) is calculated by the following equation,
 
 \begin{equation}
 {\dot{W}}_{gross} = jA_{cell}N_{cell}V_{SOFC} \label{eq:gross-power}
 \end{equation}
 
+where \emph{j} is the current density, \({A}_{cell}\) is cell effective area, \({N}_{cell}\) is the number of stacked cells, \({V}_{SOFC}\) is the unit cell voltage.
 Along with the calculation of voltage, the heat generated from electrochemical reaction is utilized for outlet gases post -- heating, satisfying the mass, energy and heat balance in each section and the overall stack.
-Simulation results of the model has been validated with experimental results for hydrogen operation.
-Since this study considers ammonia to be decomposed in a reformer before entering the SOFC anode channel -- where the equilibrium assumption of temperature over 600\textdegree C yields a conversion rate exceeding 99.9\% - the anode channel gas can be treated as diluted hydrogen \cite{fuerte2009ammonia,lucentini2019catalytic, maffei2008high}.
-Therefore, it can be considered that the model provides reliable results for ammonia operations.
 
 \subsection{Balance of Plants (BoPs)}
 
 \subsubsection{Heat Exchanger}
 
-A shell and tube heat exchanger model developed by Park et al.~\cite{park2019comparative} was employed to transfer heat from post -- combustion gas to fresh air.
-Fresh air flows into the tube side of the heat exchanger as the cold fluid, and post combustion gas enters the shell side as the hot fluid.
-The model takes geometrical parameters such as tube length, shell diameter, number of baffles, etc. and thermodynamic properties of inlet gases as the input to calculate output values such as pressure drops, heat transfer coefficient, outlet gas temperature.
+A shell and tube heat exchanger model developed by Park et al.~\cite{PARK2019351} was employed to simulate heat transfer from post -- combustion gas to fresh air.
+Fresh air flows into the tube side of the heat exchanger as cold fluid, and post combustion gas enters the shell side as the hot fluid.
+The model takes geometrical parameters such as tube length, shell diameter, number of baffles and thermodynamic properties of inlet gases as the input to calculate output values such as pressure drops, heat transfer coefficient, outlet gas temperature.
 Such output parameters are calculated from input parameters by the Bell -- Delaware method.
 
 \subsubsection{Reformer}
 
-An ammonia reformer model developed by Lee et al.~\cite{LEE2025238271} was exploited to decompose ammonia using heat from the high temperature stack off -- gas.
+An ammonia reformer model developed by Lee et al.~\cite{LEE2025238271} was exploited to simulate ammonia decomposition using heat from the high temperature stack off-gas.
 The reformer model shares the same dimensional properties as the shell and tube heat exchanger model while the tube is packed with cylindrical pellets of Ni catalyst.
-Pure ammonia, or a mixture of ammonia and anode off -- gas flows into the tube side as the cold fluid and stack off -- gas enters the shell side as the hot fluid.
-It is assumed that the composition of outlet gas of the tube side reaches chemical equilibrium.
+Pure ammonia, or a mixture of ammonia and anode off-gas flows into the tube side as the cold fluid and stack off-gas enters the shell side as the hot fluid.
+It is assumed that the composition of outlet gas of the tube side reaches chemical equilibrium, as ammonia is fully decomposed above 600 \textdegree C in Ni-based catalysts\cite{FUERTE2009170,LUCENTINI201912693, MAFFEI2008221}.
 
 \subsubsection{Ejector}
 
 An ejector model developed by Park et al.~\cite{PARK2023232970} was employed for AOGR.
+The model has been validated in the same study by comparing simulation results with data from a prior study accoutning ejector performance in a SOFC AOGR system \cite{MARSANO2004216}.
+Operating conditions of the validated ejector model are provided in Supplementary Table 1.  
 The ejector allows AOGR with zero parasitic power by `inhaling' the low-pressure anode -- off gas as entrained flow, using high -- pressure ammonia as primary flow.
 As a result, the ejector discharges a mixture fluid as a fuel for SOFC stack.
 The ejector model accounts for compressible flow effects by assuming critical mode operation, where both the primary and secondary stream undergo choking.
 Input parameters are the thermodynamic properties of both flows entering the ejector, and the model calculates a suitable geometry for mass flow rates of the inlet flows as the output, together with the thermodynamic properties of the mixed stream.
-The ejector model has been validated by comparing simulation results with data from a prior study accounting ejector performance in a SOFC AOGR system \cite{marsano2004ejector}.
 
 \subsubsection{Others}
 
 Other BoPs composing the system include blower, splitter, combustor, etc.
 Under a similar underlying mechanism, the BoPs calculate the thermodynamic properties of its outlet stream by calculating mass -- energy balance relations together with governing equations depending on the function of the BoP.
-Details of each model can be found in reference \cite{park2019comparative}.
+Details of each model can be found in reference \cite{PARK2019351}.
 
 \section{System Configuration}
 
@@ -217,56 +217,7 @@ Details of each model can be found in reference \cite{park2019comparative}.
 
 When designing a SOFC system, a suitable system integration method must be adopted to satisfy thermal conditions such as the feasibility to supply sufficient heat to SOFC inlet flows.
 Accordingly, two system layouts were evaluated in this study: configurations with and without AOGR.
-
-\subsubsection{Recirculation System}
-
-For recirculation systems -- which is the focus of this work -- Ejector CG layout proposed by Park~\cite{PARK2023232970} was referenced as a baseline and modified to meet the objectives of this study.
-The process flow diagram of Ejector CG layout is shown in Fig.~\ref{fig:baseline-ejector-cg}.
-
-\begin{figure}[pos=t]
-\centering
-\includegraphics[width=0.9\linewidth]{image1.png}
-\caption{Process flow diagram of the baseline Ejector CG layout.}
-\label{fig:baseline-ejector-cg}
-\end{figure}
-
-Ejector CG is a layout where a portion of anode off -- gas is recirculated as fuel, and the rest is utilized as a hot stream of the reformer.
-Air and fuel are pressurized by a blower or compressor to compensate for pressure drop effects and heated in a heat exchanger or reformer before entering the SOFC stack.
-By adjusting the split ratio of the three -- way valve, the system can achieve operational flexibility via control of AOGR rate.
-The non recirculated part of anode off -- gas flows into the shell side of the reformer to provide heat to the recirculated fuel.
-In addition, the remaining heat of both anode and cathode off -- gas can be efficiently utilized by a sequence of raising the temperature of off -- gas mixture through combustion, utilizing the heat at the air heat exchanger, and finally extracting waste heat from the waste heat recovery system.
-However, the prior study of Ejector CG layout was conducted for natural gas fueled SOFC system, and operational parameters were not varied.
-Since this study analyses ammonia fueled SOFC systems, and operational parameters are varied at a wide range, ejector CG layout has the following limitations.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item Depending on system operating conditions, the system may not be thermodynamically feasible.
-\item For a given design configuration of a heat exchanger, the required mass flow rate of hot stream at each heat exchanger differs for every single operating condition.
-\item Unnecessary parasitic power is induced at the fuel compressor.
-\end{enumerate}
-
-An exemplary operating condition when FU = 0.7, anode inlet T = 600\textdegree C, current density = 0.2A/cm\textsuperscript{2}, AOGR ratio = 50\% - which is introduced afterwards as the base case -- is a case where limitation 1 may occur.
-The cracking of ammonia is a highly endothermic reaction, hence a large amount of heat duty is required at the reformer.
-However, the anode off-gas does not contain sufficient thermal energy to supply heat to the cold stream of the reformer due to its relatively low mass flow rate.
-Therefore, in such cases, the thermal energy rich cathode off-gas should be utilized instead as the heat source to supply sufficient heat to the cold stream, while satisfying the 2\textsuperscript{nd} law of thermodynamics.
-A T-Q diagram analysis of each cases -- utilizing cathode off-gas as the reformer heat source and anode off-gas as the reformer heat source -- is displayed in the Supplementary Fig. S1 to quantitatively verify the need of utilizing cathode off-gas as the heat source of the fuel reformer.
-
-To resolve limitation 2, the heat duty value at both the heat exchanger and reformer must be adjusted to provide a suitable amount of heat to the cold side fluid.
-However, the heat duty required at each point differs for every different operating condition of the system.
-Since the heat exchanger model and reformer model calculates heat duty and outlet temperature based on design configuration and inlet thermodynamic properties, heat duty can be adjusted by differing the heat exchanger's geometrical parameters or differing the mass flow rate entering the shell side.
-Mass flowrate of the shell side fluid greatly affects the amount of heat transfer between the tube and shell side fluid, as a greater mass flowrate substantially increases turbulence in the shell side flow, improving heat transfer performance \cite{ozden2010shell}.
-The design configurations of a shell and tube heat exchanger is a unique parameter which cannot be adjusted flexibly in real engineering applications; therefore, shell side inlet mass flowrate is a readily available variable that can be varied.
-Shell side inlet mass flowrate can be adjusted by adding a 3-way valve upstream of the heat exchanger and reformer's shell side flow.
-The 3-way valve is given a designated split ratio to branch off a suitable mass flowrate of hot gas to the heat exchanger and reformer, so that the cold outlet stream can reach a desired temperature.
-In the case of heat exchanger, mass flow rate is branched off to provide a suitable amount of heat for air heating, and in the case of reformer, mass flow rate is branched off to provide a suitable amount of heat for ammonia decomposition and fuel heating.
-
-Limitation 3 occurs due to a difference in the target environment and fuel of the system.
-The study conducted by Park~\cite{PARK2023232970} analyzed a natural gas fueled SOFC system for residential heat and power generation, thereby assuming that natural gas is fed into the system at 1 atm.
-To induce proper operation at the ejector and compensate for pressure drop effects at the fuel reformer, natural gas is pressurized by the compressor at a high pressure of over 5 atm in the corresponding study.
-Such operation causes a significant increase in parasitic power due to power consumption of the fuel compressor.
-However, this study considers ammonia as a fuel for marine power generation, where ammonia is conventionally stored at a high pressure of 18 bar for fuel \cite{DNV2023AmmoniaMarineFuelHandbook}.
-Therefore, given the sufficiently high inlet pressure of pure ammonia, the fuel compressor is omitted, and a throttling valve is installed instead to meet the required pressure boundary conditions across operating points.
-Applying the above three resolutions together, the final process flow diagram of the recirculation system layout is shown in Fig.~\ref{fig:system-layouts-recirc}.
+The process flow diagrams of both layouts are presented in Fig.~\ref{fig:system-layouts}.
 
 \begin{figure*}[width=\textwidth,pos=!t]
 \centering
@@ -289,11 +240,54 @@ Applying the above three resolutions together, the final process flow diagram of
 \label{fig:system-layouts}
 \end{figure*}
 
+\subsubsection{Recirculation System}
+
+The process flow diagram of the recirculation system layout is shown in Fig.~\ref{fig:system-layouts-recirc}.
+This layout was obtained by referencing Ejector CG layout proposed by Park~\cite{PARK2023232970} as a baseline and modifying it to meet the objectives of this study.
+The three limitations of the baseline layout under the operating conditions considered in this study, together with the resolution applied to each of them, are described in the remainder of this section.
+
+Ejector CG is a layout where a portion of anode off-gas is recirculated as fuel, and the rest is utilized as a hot stream of the reformer.
+Air and fuel are pressurized by a blower or compressor to compensate for pressure drop effects and heated in a heat exchanger or reformer before entering the SOFC stack.
+By adjusting the split ratio of the splitter (three-way valve), the system can achieve operational flexibility via control of AOGR rate.
+The non recirculated part of anode off-gas flows into the shell side of the reformer to provide heat to the recirculated fuel.
+In addition, the remaining heat of both anode and cathode off-gas can be efficiently utilized by a sequence of raising the temperature of off-gas mixture through combustion, utilizing the heat at the air heat exchanger, and finally extracting waste heat from the waste heat recovery system.
+However, the prior study of Ejector CG layout was conducted for natural gas fueled SOFC system, and operational parameters were not varied.
+Since this study analyzes ammonia fueled SOFC systems, and operational parameters are varied at a wide range, ejector CG layout has the following limitations.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item Depending on system operating conditions, the system may not be thermodynamically feasible.
+\item For a given design configuration of a heat exchanger, the required mass flow rate of hot stream at each heat exchanger differs for every single operating condition.
+\item Unnecessary parasitic power is induced at the fuel compressor.
+\end{enumerate}
+
+An exemplary operating condition when stack fuel utilization = 0.7, anode inlet T = 600 \textdegree C, current density = 0.2 A/cm\textsuperscript{2}, AOGR ratio = 50\% - which is introduced afterwards as the base case -- is a case where limitation 1 may occur.
+The cracking of ammonia is a highly endothermic reaction, hence a large amount of heat duty is required at the reformer.
+However, the anode off-gas does not contain sufficient thermal energy to supply heat to the cold stream of the reformer due to its relatively low mass flow rate.
+Therefore, in such cases, the thermal energy rich cathode off-gas could be utilized alternatively as the heat source to supply sufficient heat to the cold stream, while satisfying the 2\textsuperscript{nd} law of thermodynamics.
+A T-Q diagram analysis of each cases -- utilizing cathode off-gas as the reformer heat source and anode off-gas as the reformer heat source -- is displayed in \href{Supplementary.pdf}{Supplementary Fig. S1} to quantitatively verify the need of utilizing cathode off-gas as the heat source of the fuel reformer.
+
+To resolve limitation 2, the heat duty value at both the heat exchanger and reformer must be adjusted to provide a suitable amount of heat to the cold side fluid.
+However, the heat duty required at each point differs for every different operating condition of the system.
+Since the heat exchanger model and reformer model calculates heat duty and outlet temperature based on design configuration and inlet thermodynamic properties, heat duty can be adjusted by differing the heat exchanger's geometrical parameters or differing the mass flow rate entering the shell side.
+Mass flowrate of the shell side fluid greatly affects the amount of heat transfer between the tube and shell side fluid, as a greater mass flowrate substantially increases turbulence in the shell side flow, improving heat transfer performance \cite{OZDEN20101004}.
+The design configurations of a shell and tube heat exchanger is a unique parameter which cannot be adjusted flexibly in real engineering applications; therefore, shell side inlet mass flowrate is a readily available variable that can be varied.
+Shell side inlet mass flowrate can be adjusted by adding a splitter upstream of the heat exchanger and reformer's shell side flow.
+The splitter is given a designated split ratio to branch off a suitable mass flowrate of hot gas to the heat exchanger and reformer, so that the cold outlet stream can reach a desired temperature.
+In the case of heat exchanger, mass flow rate is branched off to provide a suitable amount of heat for air heating, and in the case of reformer, mass flow rate is branched off to provide a suitable amount of heat for ammonia decomposition and fuel heating.
+
+Limitation 3 occurs due to a difference in the target environment and fuel of the system.
+The study conducted by Park~\cite{PARK2023232970} analyzed a natural gas fueled SOFC system for residential heat and power generation, thereby assuming that natural gas is fed into the system at 1 atm.
+To induce proper operation at the ejector and compensate for pressure drop effects at the fuel reformer, natural gas is pressurized by the compressor at a high pressure of over 5 atm in the corresponding study.
+Such operation causes a significant increase in parasitic power due to power consumption of the fuel compressor.
+However, this study considers ammonia as a fuel for marine power generation, where ammonia is conventionally stored at a high pressure of 18 bar for fuel \cite{DNV2023AmmoniaMarineFuelHandbook}.
+Therefore, given the sufficiently high inlet pressure of pure ammonia, the fuel compressor is omitted, and a throttling valve is installed instead to meet the required pressure boundary conditions across operating points.
+
 \subsubsection{Non-Recirculation System}
 
-In a case where the AOGR ratio is 0, the ejector does not play any role in the system as no part of the anode off -- gas is fed back.
-To evaluate non recirculation system performances under unified conditions, an identical system layout was utilized, but the ejector was omitted from the system together with the recirculating 3-way valve.
-Since the 3 -- way valve is omitted, all parts of the anode off -- gas is directly fed to the combustor to provide heat to the air heat exchanger after combustion.
+In a case where the AOGR ratio is 0, the ejector does not play any role in the system as no part of the anode off-gas is fed back, and pure ammonia fuel from the system inlet bypasses through the ejector.
+To evaluate non recirculation system performances under unified conditions, an identical system layout was utilized, but the ejector was omitted from the process flow diagram together with the recirculating splitter.
+Since the splitter is omitted, all parts of the anode off-gas is directly fed to the combustor to provide heat to the air heat exchanger after combustion.
 The process flow diagram of the non -- recirculation systam layout is shown in Fig.~\ref{fig:system-layouts-nonrecirc}.
 
 \subsection{Input Parameters \& Boundary Conditions}
@@ -301,13 +295,13 @@ The process flow diagram of the non -- recirculation systam layout is shown in F
 To compare system performances at different operating conditions, a set of common input parameters must be established to solely analyze the effect of changing operating parameters.
 The input parameters and boundary conditions imposed in this study are summarized in Table~\ref{tab:input-params}.
 The ambient conditions are set as 25\textdegree C and 1 atm, thereby setting the inlet condition of air as the same temperature and pressure.
-Due to the ambient condition, a pressure boundary condition is set at the system sink to be 1 atm, so that neither fluid reflux occurs at the sink nor any unnecessary parasitic power is consumed at the air blower.
+Due to the ambient condition, a pressure boundary condition is set at the system sink to be 1 atm, so that neither fluid backflow occurs at the sink nor any unnecessary parasitic power is consumed at the air blower.
 In addition, system outlet temperature is set to dew point, as a waste heat recovery system recuperates heat from the exhaust gas until it reaches dew point.
 At the fuel inlet side, 100\% ammonia is fed as a saturated vapor at 18 bar, which is the pressure where fully pressurized ammonia is transported and stored as a marine fuel \cite{DNV2023AmmoniaMarineFuelHandbook}.
 The temperature of system inlet ammonia is set to 45\textdegree C, which is the saturation temperature of ammonia at 18 bar.
-The pressure difference between anode and cathode inlet at the SOFC stack is set to be under 10 mbar to avoid mechanical destruction of the cell \cite{seidler2011pressurized}.
-The temperature of the anode and cathode inlet stream is set to be minimum at 600\textdegree C among the parametric study to guarantee complete decomposition of ammonia at the fuel reformer and stack \cite{maffei2008high}.
-In addition, the temperature difference between the inlet stream and outlet stream of SOFC stack is set as 100\textdegree C to reduce thermal stress to the stack \cite{cinti2023design}.
+The pressure difference between anode and cathode inlet at the SOFC stack is set to be under 10 mbar to avoid mechanical destruction of the cell \cite{SEIDLER20117195}.
+The temperature of the stack inlet stream is set to be minimum at 600\textdegree C among the parametric study to guarantee complete decomposition of ammonia at the fuel reformer and stack \cite{MAFFEI2008221}.
+In addition, the temperature difference between the inlet stream and outlet stream of SOFC stack is set as 100\textdegree C to reduce thermal stress to the stack \cite{CINTI202315269}.
 The mass flowrate of air through cathode inlet was adjusted at each operating conditions to satisfy the temperature difference boundary condition, as air can be utilized as a coolant to avoid overheating inside the stack.
 As fluid flows across the stack, it is assumed that a pressure drop of 0.5\% occurs due to the geometry of anode and cathode channels \cite{LEE2025238271}.
 
@@ -354,8 +348,8 @@ Number of stacked cells & 2380 & [ea] & \\
 Effective cell area & 121 & {[}cm\textsuperscript{2}{]} & \\
 Anode pressure drop & 0.5 & [\%] & \cite{LEE2025238271}\\
 Cathode pressure drop & 0.5 & [\%] & \cite{LEE2025238271}\\
-SOFC inlet pressure difference tolerance & 10 & [mbar] & \cite{seidler2011pressurized}\\
-SOFC inlet/outlet temperature difference & 100 & [\textdegree C] & \cite{cinti2023design}\\
+SOFC inlet pressure difference tolerance & 10 & [mbar] & \cite{SEIDLER20117195}\\
+SOFC inlet/outlet temperature difference & 100 & [\textdegree C] & \cite{CINTI202315269}\\
 \midrule\noalign{}
 \textbf{Blower} & & & \\
 Isentropic efficiency & 85 & [\%] & \\
@@ -363,28 +357,43 @@ Isentropic efficiency & 85 & [\%] & \\
 \end{tabular}
 \end{table}
 
-The operating conditions of the system analyzed in this system are varied in a wide range with a base case of stack inlet temperature 600\textdegree C (\(T_{stack})\),stack fuel utilization rate 70\% (\({FU}_{stack}\)), current density 0.2A/cm\textsuperscript{2} (\emph{j}), AOGR ratio 50\% (\emph{r}), which is a condition to generate approximately 50 kW of gross power.
-To meet the power demand under given operating conditions, the SOFC stack is consisted of 2380 cells with an active area of 121cm\textsuperscript{2}.
-Along with the scale of SOFC stack, mass flow rates of fuel inlet at each operating condition is determined as the following equations.
+The operating conditions of the system analyzed in this system are varied in a wide range with a base case stack inlet temperature \textdegree C (\(T_{stack})\) of 600 ,stack fuel utilization rate 70\% (\({FU}_{stack}\)), current density 0.2 A/cm\textsuperscript{2} (\emph{j}), AOGR ratio 50\% (\emph{r}), which is a condition to generate approximately 50 kW of gross power.
+Stack fuel utilization and AOGR ratio are defined as Eqs.~\eqref{eq:fu-def} and \eqref{eq:aogr-def}.
+
+\begin{align}
+{FU}_{stack} &= \frac{{\dot{n}}_{O^{2 -}}}{\left( {\dot{n}}_{H_{2}} + \frac{3}{2}{\dot{n}}_{{NH}_{3}} \right)_{stack,in}} \label{eq:fu-def} \\
+r &= \frac{{\dot{n}}_{AOGR}}{{\dot{n}}_{stack,a,out}} \label{eq:aogr-def}
+\end{align}
+
+Where \({\dot{n}}_{O^{2 -}}\) is the rate of oxygen ion transport, defined as Eq.~\eqref{eq:ion-transport}.
+
+\begin{align}
+{\dot{n}}_{O^{2 -}} &= \frac{jN_{cell}A_{cell}}{2F} \label{eq:ion-transport}
+\end{align}
+To meet the power demand under given operating conditions, the SOFC stack is consisted of 2380 cells with an active area of 121 cm\textsuperscript{2}.
+Along with the scale of SOFC stack, mass flowrates of fuel inlet at each operating condition is determined as Eq.~\eqref{eq:fuel-flow}.
+
 
 \begin{align}
 \begin{split}
 {\dot{m}}_{{NH}_{3}} &= \frac{2{\dot{n}}_{O^{2 -}}{MW}_{{NH}_{3}}}{3{FU}_{stack}} \\
 &\quad \cdot \left( 1 - r\left( 1 - {FU}_{stack} \right) \right)
-\end{split} \label{eq:fuel-flow} \\
-{\dot{n}}_{O^{2 -}} &= \frac{jN_{cell}A_{cell}}{2F} \label{eq:ion-transport}
+\end{split} \label{eq:fuel-flow}
 \end{align}
+Where \({MW}_{{NH}_{3}}\) is the molar mass of ammonia. 
+When AOGR is applied, unused fuel from the SOFC stack outlet is recirculated, and the recirculated fuel supplies the fuel demand at the anode inlet.
+Such process reduces the amount of fuel required at the system inlet while satisfying \({FU}_{stack}\) conditions; hence the system fuel utilization is determined as Eq.~\eqref{eq:fu-system}.
 
-Where \({\dot{n}}_{O^{2 -}}\) is the rate of oxygen ion transport,
-\({MW}_{{NH}_{3}}\) is the molar mass of ammonia, respectively. When
-AOGR is applied, unused fuel from the SOFC stack outlet is recirculated, and the recirculated fuel supplies the fuel demand at the anode inlet.
-Such process reduces the amount of fuel required at the system inlet to satisfy \({FU}_{stack}\) conditions.
+\begin{equation}
+{FU}_{system} = \frac{{FU}_{stack}}{1 - r\left( 1 - {FU}_{stack} \right)} \label{eq:fu-system}
+\end{equation}
 
 Dimensional parameters for the heat exchanger and reformer were determined following standard design guidelines for commercial shell-and-tube heat exchangers \cite{thulukkanam2000heat,kakacc2002heat, thome2006wolverine}.
 Key geometric variables---including tube length, shell diameter, and baffle spacing---were tuned to ensure that the required heat duties are met over a wide operating range.
-To prevent overdesign, the final dimensions were selected such that the tube-side velocity remained within an appropriate range for effective heat transfer.
-However, since fluid flow rates vary substantially across operating conditions, a single heat exchanger design cannot staisfy the heat duty and velocity requirements at every point, even with three-way valve fluid control.
+To prevent overdesign, the final dimensions were selected such that the tube-side velocity remained within an appropriate range (15-30m/s) for effective heat transfer \cite{edwards2008design}.
+However, since fluid flow rates vary substantially across operating conditions, a single heat exchanger design cannot staisfy the heat duty and velocity requirements at every point, even with splitter fluid control.
 Therefore, if a given heat exchanger unit could not physically meet its heat duty requirements or tube-side velocity range, its size would be adjusted to meet such conditions.
+Details about the adjustment of heat exchanger and reformer dimensions is descripted in \href{Supplementary.pdf}{Supplementary Note S1}.
 The main geometric parameters of the base-case heat exchanger and reformer are summarized in Table~\ref{tab:hx-reformer-design}.
 
 \begin{table}[!t]
@@ -471,11 +480,11 @@ AOGR ratio & 0, 10, 20, 30, 40, 50\ldots{} Max & [\%] \\
 \section{Results and Discussion}
 
 To analyze the sole effect of each operating parameter, each parameters were primarily varied at the base case.
-The complete stream table for the base case operation is provided in supplementary table XX.
-Key performance indices include system gross power, electrical efficiency, etc.
-In this study, the only parasitic power induced in the system is power consumption at the air blower.
-Therefore, electrical efficiency and net power can be defined as Eqs.~\eqref{eq:efficiency} and \eqref{eq:net-power}.
-To evaluate the performance of the system's capability to generate electrical power at a non-biased scale, the gross power was normalized as power density, defined as Eq.~\eqref{eq:power-density}.
+The complete stream table for the base case operation is provided in \href{Supplementary.pdf}{Supplementary Table S1}.
+Key performance indices include system gross power, electrical efficiency ($\eta_{elec}$), etc.
+In this study, the only parasitic power induced in the system is power consumption at the air blower ($\dot{W}_{\mathrm{blower}}$).
+Therefore, electrical efficiency and net power ($\dot{W}_{\mathrm{net}}$)can be defined as Eqs.~\eqref{eq:efficiency} and \eqref{eq:net-power}.
+To evaluate the performance of the system's capability to generate electrical power at a non-biased scale, the gross power was normalized as power density ($\dot{w}_{\mathrm{gross}}$), defined as Eq.~\eqref{eq:power-density}.
 
 \begin{align}
 \eta_{elec} &= \frac{\dot{W}_{net}}{\dot{n}_{fuel} LHV_{fuel}} \times 100, \label{eq:efficiency} \\
@@ -496,14 +505,14 @@ To inspect in detail the mechanism of determination of maximum AOGR ratio, the s
 \end{figure*}
 
 As a mixture of system inlet fuel and the recirculated portion of anode off - gas (stream 2) flows consecutively through the fuel reformer and stack anode channel, the stream undergoes pressure drop and exits the stack (stream 4).
-A portion of the low-pressure anode off -- gas is branched off through the three-way valve depending on the AOGR ratio (stream 5) and enters the suction inlet of the ejector.
+A portion of the low-pressure anode off-gas is branched off through the splitter depending on the AOGR ratio (stream 5) and enters the suction inlet of the ejector.
 The pressure of stream 5 must be elevated to compensate for pressure drop effects of the fuel reformer and stack anode channel.
 Therefore, a high-pressure fuel (stream 1) enters through the primary inlet of the ejector and is mixed with stream 5 to pressurize the recirculated fluid.
 The mixed fluid leaves the ejector at a back pressure as stream 2, and the pressure balance of AOGR loop is satisfied.
 
 As the system AOGR ratio increases, the entrainment ratio of the ejector also increases.
 Under this condition, a larger mass flow rate of the low-pressure fluid in stream 5 is entrained into the ejector, and therefore the pressure of stream 1 must be increased to ensure proper mixing with stream 5 and to achieve the desired back pressure at stream 2.
-This is because a higher primary inlet pressure increases the stagnation pressure of the primary flow, thereby supplying more kinetic energy to the mixed fluid and resulting in greater pressure recovery \cite{wang2017experimental}.
+This is because a higher primary inlet pressure increases the stagnation pressure of the primary flow, thereby supplying more kinetic energy to the mixed fluid and resulting in greater pressure recovery \cite{WANG2017158}.
 However, the maximum pressure of stream 1 is limited to 18 bar, and the 18 bar primary flow may not be able to sufficiently pressurize the recirculated stream when the AOGR ratio is too high.
 In addition to this, the pressure drop occurring at the fuel reformer cold side also generally increases with the AOGR ratio due to an increase in the mass flowrate of stream 2.
 Therefore, it can be deduced that the maximum AOGR ratio of the system is determined by the following two factors: entrainment and pressurization performance of the ejector, and pressure drop occurring at the fuel reformer cold side.
@@ -534,11 +543,11 @@ However, in contrast to the cases of \({FU}_{stack}\) and \emph{j}, the variatio
 Such substantial reduction implies that, under varying \(T_{stack}\), the upper bound of the AOGR ratio is governed not only by the reformer pressure drop but more dominantly by the entrainment performance of the ejector itself.
 
 Specifically, as the temperature of the entrained anode off-gas rises while the primary flow condition remains fixed, the speed of sound of the secondary stream also increases, which leads to a reduction in the convective Mach number that characterizes the compressible mixing process between the primary and secondary flows within the ejector.
-According to the recent numerical investigation of supersonic ejector mixing by Liang et al.~\cite{liang2025numerical} a lower convective Mach number---corresponding to a higher total temperature ratio between the secondary and primary flows---weakens the momentum exchange across the confined mixing layer, thereby deteriorating the mixing process between the two streams.
+According to the recent numerical investigation of supersonic ejector mixing by Liang et al.~\cite{LIANG2025109984} a lower convective Mach number---corresponding to a higher total temperature ratio between the secondary and primary flows---weakens the momentum exchange across the confined mixing layer, thereby deteriorating the mixing process between the two streams.
 Since insufficient mixing prevents the secondary flow from being adequately accelerated by the high-velocity primary flow, the Mach number of the mixed flow at the diffuser inlet decreases, which in turn degrades both the entrainment capability and the pressure lift performance of the ejector.
 Consequently, the ejector becomes less capable of overcoming the discharge back pressure of the AOGR loop, and the maximum allowable AOGR ratio decreases more sharply than what the reformer pressure drop alone would predict.
 To verify this, a supplementary analysis was conducted by modelling a simple ejector system inhaling pure ammonia as primary flow and arbitrary anode off-gas as the entrained flow.
-The results confirm that for a constant entrainment ratio, pressure lift performance of the ejector decreases as the temperature of entrainment flow increases (Supplementary Table XX).
+The results confirm that for a constant entrainment ratio, pressure lift performance of the ejector decreases as the temperature of entrainment flow increases (\href{Supplementary.pdf}{Supplementary Tables S2 and S3}).
 This trend indicates that operating the system at higher \(T_{stack}\) is operationally unfavorable for sustaining a wide AOGR operating window, as the deteriorated performance becomes the dominant constraint that governs the upper bound of the AOGR ratio.
 
 \begin{figure*}[width=\textwidth,pos=!t]
@@ -672,7 +681,7 @@ p_{air\,blower} = 1\,\mathrm{atm} &+ \Delta p_{stack} + \Delta p_{reformer,hot} 
 \end{equation}
 
 where \(\Delta p_{stack}\) is the pressure drop across the SOFC stack cathode channel, \(\Delta p_{reformer,hot}\) is the pressure drop across the hot side of the fuel reformer, and \(\Delta p_{air\,HX,hot}\) is the pressure drop across the hot side of the air heat exchanger.
-The flow path of fluid to be pressurized by the air blower is represented in supplementary figure XX.
+The flow path of fluid to be pressurized by the air blower is represented in \href{Supplementary.pdf}{Supplementary Fig. S2}.
 As AOGR ratio increases, the pressure drops occurring at the heat exchanger and fuel reformer are amplified, while the SOFC stack channel pressure dop is determined almost constant as 0.5\% of the fluid pressure.
 First, the pressure drop on the hot side of the fuel reformer rises through a more subtle mechanism than a simple increase in the cold-side flow rate.
 With increasing AOGR ratio, the mass flow rate of fresh ammonia entering the reformer cold inlet decreases, since a larger fraction of the stack inlet fuel demand is met by recirculated unreacted fuel.
@@ -680,7 +689,7 @@ This reduction in ammonia content moderately lowers the heat duty required for t
 However, the AOGR ratio simultaneously raises the temperature of the reformer cold inlet stream, because the recirculated anode off-gas---returning at a high temperature---constitutes an increasingly large fraction of the cold stream.
 Since the reformer hot stream inlet temperature is essentially fixed as the stack cathode off gas temperature, the elevated cold-side temperature causes the log-mean temperature difference (LMTD) across the reformer to decrease substantially.
 Because the LMTD reduction outweighs the moderate decrease in the heat duty, the mass flow rate of the hot stream required to satisfy the heat balance must increase, leading to a higher pressure drop \(\Delta p_{reformer,hot}\)on the hot side of the fuel reformer.
-The corresponding data of LMTD and heat duty at the fuel reformer is provided in supplementary table XX for different AOGR ratio operation.
+The corresponding data of LMTD and heat duty at the fuel reformer is provided in \href{Supplementary.pdf}{Supplementary Table S4} for different AOGR ratio operation.
 Second, the pressure drop on the hot side of the air heat exchanger rises through a chain of effects originating from the stack inlet-outlet temperature difference boundary condition.
 In SOFC operation, the cathode air flow rate is determined by the boundary condition that the temperature difference between the stack inlet and outlet must remain at 100\textdegree C.
 As discussed earlier, increasing the AOGR ratio reduces the cell operating voltage and consequently lowers the stack power generation.
@@ -743,7 +752,7 @@ Such result in system performance originates from the effect of AOGR ratio and \
 As shown in Fig.~\ref{fig:temperature-map}(b), the cell voltage at any given AOGR ratio exhibits a non-monotonic dependence on \(T_{stack}\): it first increases from 600\textdegree C to an intermediate maximum and then decreases again toward 800\textdegree C.
 An intermediate optimal temperautre exists due to a trade-off in reversible potential and overpotential.
 As the operating temperature of the SOFC stack incrases, its activation and ohmic overpotential decreases due to a decrease in exchange current density and increase in ionic conductivity, while the reversible potential also decreases.
-Detailed information in stack voltage at different \(T_{stack}\) with base case \({FU}_{stack}\), \emph{j}, AOGR ratio, is provided in supplementary table XX.
+Detailed information in stack voltage at different \(T_{stack}\) with base case \({FU}_{stack}\), \emph{j}, AOGR ratio, is provided in \href{Supplementary.pdf}{Supplementary Table S5}.
 The location of this maximum, however, shifts to lower temperatures as the AOGR ratio increases.
 At zero recirculation, the cell voltage peaks broadly across the 700--750 \textdegree C range, with the two temperatures yielding nearly identical voltage values of 0.9541 V and 0.9542 V.
 As the AOGR ratio increases, the peak gradually narrows and migrates toward 700 \textdegree C: at the maximum allowable AOGR ratio, the cell voltage at 700 \textdegree C (0.8807 V) clearly exceeds that at 750 \textdegree C (0.8779 V), even though the two values were essentially indistinguishable at zero recirculation.
@@ -771,7 +780,7 @@ The origin of this behavior can be explained by the dependence of reversible pot
 The reversible cell voltage of the SOFC is given by Eq.~\eqref{eq:nernst} where the second term on the right-hand side---the Nernstian term---is responsible for the temperature dependence of the reversible potential under the operating conditions of interest.
 As the AOGR ratio increases, the recirculated stream depletes hydrogen partial pressure \(p_{H_{2}}\) and enriches the steam partial pressure \(p_{H_{2}O}\) at the stack anode inlet, which reduces the partial pressure ratio inside the logarithm to a value below unity and renders the logarithmic argument increasingly negative in sign.
 Therefore, at higher AOGR ratios, a given temperature increment produces a larger reduction in the Nernstian term and therefore a steeper decline in the reversible potential.
-To quantify the amplification of the reversible potential-reduction effect with AOGR, the magnitude of the reversible potential temperature sensitivity, \(\left|dE_{rev}/dT\right|\), is shown in Supplementary Figure SX.
+To quantify the amplification of the reversible potential-reduction effect with AOGR, the magnitude of the reversible potential temperature sensitivity, \(\left|dE_{rev}/dT\right|\), is shown in \href{Supplementary.pdf}{Supplementary Fig. S3}.
 This finding suggests that the design and operation of NH$_3$-fueled SOFC systems incorporating AOGR should explicitly account for the coupling between the AOGR ratio and \(T_{stack}\), rather than treating the two parameters as independently optimizable variables.
 In particular, when high AOGR ratios are desired for system efficiency reasons, operating the stack at moderately high temperatures yields superior overall performance compared to operating at the upper end of the temperature range.
 
