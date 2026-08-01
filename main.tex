@@ -538,7 +538,13 @@ Electrical efficiency & 63.23 & [\%] \\
 \subsection{Determination of maximum AOGR Ratio}
 \label{sec:max-aogr}
 
-In the system layout proposed in this study, maximum AOGR ratio is limited by fluid properties of the anode side gas.
+The base case examined above recovers half of the unreacted anode off-gas and thereby attains a system fuel utilization of 82.4\%, and Eq.~\eqref{eq:fu-system} shows that greater \emph{r} attains greater \({FU}_{system}\).
+Such trend raises the question of how far the AOGR ratio can actually be increased, as greater \emph{r} and \({FU}_{system}\) can potentially improve system efficiency by reducing fuel consumption.
+In the present layout the AOGR ratio cannot be prescribed at will, because the ejector operates without external power input and the only source available to return the recirculated stream to the anode inlet pressure is the stagnation pressure of the primary ammonia flow, which is bounded by the 18 bar storage condition.
+Once the pressure lift that the ejector can deliver becomes insufficient to overcome the pressure drops accumulated along the recirculation path, the pressure balance of the AOGR loop can no longer be closed and the corresponding operating becomes infeasible.
+The AOGR ratio is thus bounded by a feasibility limit rather than by a performance penalty, and this limit is not a fixed value, since both the required and the attainable pressure lift vary with \({FU}_{stack}\), \emph{j} and \(T_{stack}\).
+Determining this limit as a function of the operating condition is accordingly a prerequisite for the parametric analysis of Section~\ref{sec:aogr-effect}, in which the AOGR ratio is swept up to its maximum allowable value at every operating point.
+
 To inspect in detail the mechanism of determination of maximum AOGR ratio, the streams of the anode side gas and its recirculated portion can be detached from the overall system to compose an AOGR loop section as Fig.~\ref{fig:aogr-loop}.
 
 \begin{figure*}[width=\textwidth,pos=!t]
@@ -590,7 +596,8 @@ Specifically, as the temperature of the entrained anode off-gas rises while the 
 According to the recent numerical investigation of supersonic ejector mixing by Liang et al.~\cite{LIANG2025109984} a lower convective Mach number---corresponding to a higher total temperature ratio between the secondary and primary flows---weakens the momentum exchange across the confined mixing layer, thereby deteriorating the mixing process between the two streams.
 Since insufficient mixing prevents the secondary flow from being adequately accelerated by the high-velocity primary flow, the Mach number of the mixed flow at the diffuser inlet decreases, which in turn degrades both the entrainment capability and the pressure lift performance of the ejector.
 Consequently, the ejector becomes less capable of overcoming the discharge back pressure of the AOGR loop, and the maximum allowable AOGR ratio decreases more sharply than what the reformer pressure drop alone would predict.
-To verify this, a supplementary analysis was conducted by modelling a simple ejector system inhaling pure ammonia as primary flow and arbitrary anode off-gas as the entrained flow.
+To verify this, a supplementary analysis was conducted by modelling a simple two inlet-ejector-single sink system inhaling pure ammonia as primary flow and arbitrary anode off-gas as the entrained flow.
+Temperature of the entrained flow was varied from 700 \textdegree C to 900 \textdegree C, and the mach number and back pressure of the ejector exit stream was deduced.
 The results confirm that for a constant entrainment ratio, pressure lift performance of the ejector decreases as the temperature of entrainment flow increases (\href{Supplementary.pdf}{Supplementary Tables S3 and S4}).
 This trend indicates that operating the system at higher \(T_{stack}\) is operationally unfavorable for sustaining a wide AOGR operating window, as the deteriorated performance becomes the dominant constraint that governs the upper bound of the AOGR ratio.
 
