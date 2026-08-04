@@ -134,7 +134,12 @@ B.~Todd, J.~Young, \href{https://www.sciencedirect.com/science/article/pii/S0378
 M.~J. Moran, H.~N. Shapiro, D.~D. Boettner, M.~B. Bailey, Moran's principles of engineering thermodynamics, (No Title) (2017).
 
 \bibitem{lee2023sofc}
-J.~Lee, Thermodynamic design and analysis of ammonia-fueled solid oxide fuel cell system depending on ammonia decomposition types (2023).
+J.~Lee, Thermodynamic design and analysis of ammonia-fueled solid oxide fuel cell system depending on ammonia decomposition types, Master's thesis, Yonsei University, Seoul, Republic of Korea (2023).
+
+\bibitem{MIN2020112614}
+G.~Min, Y.~J. Park, J.~Hong, \href{https://www.sciencedirect.com/science/article/pii/S0196890420301527}{1d thermodynamic modeling for a solid oxide fuel cell stack and parametric study for its optimal operating conditions}, Energy Conversion and Management 209 (2020) 112614.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.enconman.2020.112614} {\path{doi:https://doi.org/10.1016/j.enconman.2020.112614}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0196890420301527}
 
 \bibitem{PARK2019351}
 Y.~J. Park, G.~Min, J.~Hong, \href{https://www.sciencedirect.com/science/article/pii/S0196890418314134}{Comparative study of solid oxide fuel cell-combined heat and power system designs for optimal thermal integration}, Energy Conversion and Management 182 (2019) 351--368.
@@ -194,16 +199,16 @@ S.~Kaka{\c{c}}, H.~Liu, A.~Pramuanjaroenkij, Heat exchangers: selection, rating,
 J.~R. Thome, Wolverine engineering databook iii (2006).
 
 \bibitem{edwards2008design}
-J.~E. Edwards, Design and rating shell and tube heat exchangers, Teesside, Ukraine (2008).
+J.~E. Edwards, Design and rating shell and tube heat exchangers, Tech. Rep. MNL 032A, P\&I Design Ltd., Teesside, UK (2008).
 
 \bibitem{WANG2017158}
 L.~Wang, C.~Wang, W.~Hou, H.~Zhao, H.~Zhang, \href{https://www.sciencedirect.com/science/article/pii/S0140700717301998}{Experimental investigation on ejector performance near critical back pressure}, International Journal of Refrigeration 80 (2017) 158--168.
 \newblock \href {https://doi.org/https://doi.org/10.1016/j.ijrefrig.2017.05.010} {\path{doi:https://doi.org/10.1016/j.ijrefrig.2017.05.010}}.
 \newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0140700717301998}
 
-\bibitem{LIANG2025109984}
-T.~Liang, Y.~Wang, D.~Zhang, Z.~Li, W.~Ye, G.~Li, W.~Xu, \href{https://www.sciencedirect.com/science/article/pii/S0142727X25002425}{Numerical investigation on the mixing process within the two-strut supersonic ejector}, International Journal of Heat and Fluid Flow 116 (2025) 109984.
-\newblock \href {https://doi.org/https://doi.org/10.1016/j.ijheatfluidflow.2025.109984} {\path{doi:https://doi.org/10.1016/j.ijheatfluidflow.2025.109984}}.
-\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0142727X25002425}
+\bibitem{HUANG1999354}
+B.~Huang, J.~Chang, C.~Wang, V.~Petrenko, \href{https://www.sciencedirect.com/science/article/pii/S0140700799000043}{A 1-d analysis of ejector performance}, International Journal of Refrigeration 22~(5) (1999) 354--364.
+\newblock \href {https://doi.org/https://doi.org/10.1016/S0140-7007(99)00004-3} {\path{doi:https://doi.org/10.1016/S0140-7007(99)00004-3}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0140700799000043}
 
 \end{thebibliography}
