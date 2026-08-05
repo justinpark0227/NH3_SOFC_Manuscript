@@ -397,6 +397,29 @@ Therefore, if a given heat exchanger unit could not physically meet its heat dut
 Details about the adjustment of heat exchanger and reformer dimensions is described in \href{Supplementary.pdf}{Supplementary Note S1}.
 The main geometric parameters of the base-case heat exchanger and reformer are summarized in Table~\ref{tab:hx-reformer-design}.
 
+\subsection{Operating parameters for parametric study}
+
+To analyze the operating limits and performance effects of AOGR ratio via parametric study, the following operating parameters were varied together with AOGR ratio: \(T_{stack}\), \({FU}_{stack}\), \emph{j}.
+The range and values of parameter variation are described in Table~\ref{tab:operating-params}.
+Physically attainable values of maximum AOGR ratio are explained in detail in Section~\ref{sec:max-aogr}.
+
+\FloatBarrier
+
+\section{Results and Discussion}
+
+To analyze the sole effect of each operating parameter, each parameter was primarily varied at the base case.
+The complete stream table for the base case operation is provided in \href{Supplementary.pdf}{Supplementary Table S2}.
+Key performance indices include system gross power, electrical efficiency ($\eta_{elec}$), etc.
+In this study, the only parasitic power induced in the system is power consumption at the air blower ($\dot{W}_{blower}$).
+Therefore, electrical efficiency and net power ($\dot{W}_{net}$) can be defined as Eqs.~\eqref{eq:efficiency} and \eqref{eq:net-power}.
+To evaluate the performance of the system's capability to generate electrical power at a non-biased scale, the gross power was normalized as power density ($\dot{w}_{gross}$), defined as Eq.~\eqref{eq:power-density}.
+
+\begin{align}
+\eta_{elec} &= \frac{\dot{W}_{net}}{\dot{n}_{fuel} LHV_{fuel}} \times 100, \label{eq:efficiency} \\
+\dot{W}_{net} &= \dot{W}_{gross} - \dot{W}_{blower}, \label{eq:net-power} \\
+\dot{w}_{gross} &= \frac{\dot{W}_{gross}}{N_{cell} A_{cell}}. \label{eq:power-density}
+\end{align}
+
 \begin{table}[!t]
 \rmfamily
 \footnotesize
@@ -441,12 +464,6 @@ Catalyst pellet length & 0.01041 & m & \\
 \end{tabular}
 \end{table}
 
-\subsection{Operating parameters for parametric study}
-
-To analyze the operating limits and performance effects of AOGR ratio via parametric study, the following operating parameters were varied together with AOGR ratio: \(T_{stack}\), \({FU}_{stack}\), \emph{j}.
-The range and values of parameter variation are described in Table~\ref{tab:operating-params}.
-Physically attainable values of maximum AOGR ratio are explained in detail in Section~\ref{sec:max-aogr}.
-
 \begin{table}[!t]
 \rmfamily
 \footnotesize
@@ -479,23 +496,6 @@ AOGR ratio & 0, 10, 20, 30, 40, 50\ldots{} Max & \% \\
 \end{tabular}
 \end{table}
 
-\FloatBarrier
-
-\section{Results and Discussion}
-
-To analyze the sole effect of each operating parameter, each parameter was primarily varied at the base case.
-The complete stream table for the base case operation is provided in \href{Supplementary.pdf}{Supplementary Table S2}.
-Key performance indices include system gross power, electrical efficiency ($\eta_{elec}$), etc.
-In this study, the only parasitic power induced in the system is power consumption at the air blower ($\dot{W}_{blower}$).
-Therefore, electrical efficiency and net power ($\dot{W}_{net}$) can be defined as Eqs.~\eqref{eq:efficiency} and \eqref{eq:net-power}.
-To evaluate the performance of the system's capability to generate electrical power at a non-biased scale, the gross power was normalized as power density ($\dot{w}_{gross}$), defined as Eq.~\eqref{eq:power-density}.
-
-\begin{align}
-\eta_{elec} &= \frac{\dot{W}_{net}}{\dot{n}_{fuel} LHV_{fuel}} \times 100, \label{eq:efficiency} \\
-\dot{W}_{net} &= \dot{W}_{gross} - \dot{W}_{blower}, \label{eq:net-power} \\
-\dot{w}_{gross} &= \frac{\dot{W}_{gross}}{N_{cell} A_{cell}}. \label{eq:power-density}
-\end{align}
-
 \subsection{Base-case system performance}
 \label{sec:base-case}
 
@@ -504,6 +504,13 @@ The performance indices obtained at the base case are summarized in Table~\ref{t
 The stack operates at a unit cell voltage of 0.864 V, which yields a gross power of 49.74 kW and a power density of 0.173 W/cm\textsuperscript{2}.
 Against a fuel thermal input of 76.54 kW on an LHV basis, the system consumes 1.35 kW of parasitic power at the air blower, resulting in a net power of 48.40 kW and an electrical efficiency of 63.23\%.
 Since half of the unreacted fuel leaving the anode is returned to the ejector, the \({FU}_{system}\) defined in Eq.~\eqref{eq:fu-system} reaches 82.4\%, appreciably higher than the 70\% imposed at the stack.
+
+
+\subsection{Determination of maximum AOGR Ratio}
+\label{sec:max-aogr}
+
+Eq.~\eqref{eq:fu-system} shows that greater \emph{r} attains greater \({FU}_{system}\); such trend raises the question of how far the AOGR ratio can actually be increased, as greater \emph{r} and \({FU}_{system}\) can potentially improve electrical efficiency by reducing fuel consumption.
+Determining this limit as a function of the operating condition is accordingly a prerequisite for the parametric analysis of Section~\ref{sec:aogr-effect}, in which the AOGR ratio is swept up to its maximum allowable value at every operating point.
 
 \begin{table}[!t]
 \rmfamily
@@ -540,12 +547,6 @@ Electrical efficiency & 63.23 & \% \\
 \end{tabular}
 \end{table}
 
-\subsection{Determination of maximum AOGR Ratio}
-\label{sec:max-aogr}
-
-Eq.~\eqref{eq:fu-system} shows that greater \emph{r} attains greater \({FU}_{system}\); such trend raises the question of how far the AOGR ratio can actually be increased, as greater \emph{r} and \({FU}_{system}\) can potentially improve electrical efficiency by reducing fuel consumption.
-Determining this limit as a function of the operating condition is accordingly a prerequisite for the parametric analysis of Section~\ref{sec:aogr-effect}, in which the AOGR ratio is swept up to its maximum allowable value at every operating point.
-
 To inspect in detail the mechanism of determination of maximum AOGR ratio, the streams of the anode side gas and its recirculated portion can be detached from the overall system to compose an AOGR loop section as Fig.~\ref{fig:aogr-loop}.
 
 \begin{figure*}[width=\textwidth,pos=!t]
@@ -559,7 +560,7 @@ As a mixture of system inlet fuel and the recirculated portion of anode off-gas 
 A portion of the low-pressure anode off-gas is branched off through the splitter depending on the AOGR ratio (stream 5) and enters the suction inlet of the ejector.
 The pressure of stream 5 must be elevated to compensate for pressure drop effects of the fuel reformer and stack anode channel.
 Therefore, a high-pressure fuel (stream 1) enters through the primary inlet of the ejector and is mixed with stream 5 to pressurize the recirculated fluid.
-The mixed fluid leaves the ejector at a back pressure as stream 2, and the pressure balance of AOGR loop is satisfied.
+The mixed fluid leaves the ejector at a back pressure as stream 2, and the pressure constraint of AOGR loop is satisfied.
 
 As the system AOGR ratio increases, the ejector entrainment ratio also increases due to the greater mass flow rate of stream 5.
 Under this condition, a larger mass flow rate of the low-pressure fluid in stream 5 is entrained into the ejector, and therefore the pressure of stream 1 must be increased to ensure proper mixing with stream 5 and to achieve the desired back pressure at stream 2.
@@ -571,6 +572,7 @@ Therefore, it can be deduced that the maximum AOGR ratio of the system is determ
 
 Changes in operating conditions of the SOFC system (\({FU}_{stack}\), \emph{j}, \(T_{stack}\)) can affect both the performance of the ejector and fuel reformer cold side pressure drop.
 Therefore, it is necessary to analyze how a change in each operating condition affects the maximum AOGR ratio permitted to the system.
+For each operating condition analysis, only one of \({FU}_{stack}\), \emph{j} and \(T_{stack}\) is varied, while the remaining two are held at their base-case values.
 Corresponding trends in maximum AOGR ratio with operating conditions is shown in Fig.~\ref{fig:max-aogr}.
 
 \begin{figure*}[width=\textwidth,pos=!t]
@@ -791,17 +793,6 @@ This indicates that the cell voltage at zero recirculation already peaks within 
 As the AOGR ratio increases, however, the trajectories of the higher-temperature cases (750 \textdegree C and 800 \textdegree C) curve downward more steeply than that of the 700 \textdegree C case, and the relative ranking among the operating temperatures evolves accordingly.
 At maximum allowable AOGR ratio, 700 \textdegree C emerges as the most efficient operating temperature with an electrical efficiency of 67.52\%, while 750 \textdegree C falls slightly behind at 67.02\% and 800 \textdegree C reaches only 66.02\%.
 
-This downward shift of the optimal operating temperature originates from the way the AOGR ratio modifies the dependence of the stack voltage on \(T_{stack}\).
-As shown in Fig.~\ref{fig:temperature-map}(b), the cell voltage at any given AOGR ratio exhibits a non-monotonic dependence on \(T_{stack}\): it first increases from 600\textdegree C to an intermediate maximum and then decreases again toward 800\textdegree C.
-An intermediate optimal temperature exists due to a trade-off in reversible potential and overpotential.
-As the operating temperature of the SOFC stack increases, its activation and ohmic overpotential decreases due to an increase in exchange current density and ionic conductivity, while the reversible potential decreases.
-Detailed information in stack voltage at different \(T_{stack}\) with base case \({FU}_{stack}\), \emph{j}, AOGR ratio, is provided in \href{Supplementary.pdf}{Supplementary Table S6}.
-The location of this maximum, however, shifts to lower temperatures as the AOGR ratio increases.
-At zero recirculation, the cell voltage peaks broadly across the 700--750 \textdegree C range, with the two temperatures yielding nearly identical voltage values of 0.9541 V and 0.9542 V.
-As the AOGR ratio increases, the peak gradually narrows and migrates toward 700 \textdegree C: at the maximum allowable AOGR ratio, the cell voltage at 700 \textdegree C (0.8807 V) clearly exceeds that at 750 \textdegree C (0.8779 V), even though the two values were essentially indistinguishable at zero recirculation.
-Reflecting this temperature-dependent penalty, the cumulative voltage drops incurred over the full AOGR sweep increases monotonically with \(T_{stack}\), from 68.5 mV at 600 \textdegree C to 73.3 mV at 700 \textdegree C, 76.3 mV at 750 \textdegree C, and 79.1 mV at 800 \textdegree C, even though the maximum available AOGR ratio is lower at a high \(T_{stack}\).
-This trend confirms that AOGR introduces a temperature-dependent penalty mechanism whose magnitude grows with the AOGR ratio and disproportionately affects the higher-temperature operating points.
-
 \begin{figure*}[width=\textwidth,pos=!t]
 \centering
 \begin{subfigure}{0.49\linewidth}
@@ -818,6 +809,17 @@ This trend confirms that AOGR introduces a temperature-dependent penalty mechani
 \caption{Performance map showing (a) electrical efficiency and power density and (b) voltage as a function of \(T_{stack}\) and AOGR ratio. The blue, green, yellow, red, purple markers represent \({T}_{stack}\) condition of 600, 650, 700, 750, 800\textdegree C, respectively. Number labels on the markers represent AOGR ratio, and the star marker represents base case operation.}
 \label{fig:temperature-map}
 \end{figure*}
+
+This downward shift of the optimal operating temperature originates from the way the AOGR ratio modifies the dependence of the stack voltage on \(T_{stack}\).
+As shown in Fig.~\ref{fig:temperature-map}(b), the cell voltage at any given AOGR ratio exhibits a non-monotonic dependence on \(T_{stack}\): it first increases from 600\textdegree C to an intermediate maximum and then decreases again toward 800\textdegree C.
+An intermediate optimal temperature exists due to a trade-off in reversible potential and overpotential.
+As the operating temperature of the SOFC stack increases, its activation and ohmic overpotential decreases due to an increase in exchange current density and ionic conductivity, while the reversible potential decreases.
+Detailed information in stack voltage at different \(T_{stack}\) with base case \({FU}_{stack}\), \emph{j}, AOGR ratio, is provided in \href{Supplementary.pdf}{Supplementary Table S6}.
+The location of this maximum, however, shifts to lower temperatures as the AOGR ratio increases.
+At zero recirculation, the cell voltage peaks broadly across the 700--750 \textdegree C range, with the two temperatures yielding nearly identical voltage values of 0.9541 V and 0.9542 V.
+As the AOGR ratio increases, the peak gradually narrows and migrates toward 700 \textdegree C: at the maximum allowable AOGR ratio, the cell voltage at 700 \textdegree C (0.8807 V) clearly exceeds that at 750 \textdegree C (0.8779 V), even though the two values were essentially indistinguishable at zero recirculation.
+Reflecting this temperature-dependent penalty, the cumulative voltage drops incurred over the full AOGR sweep increases monotonically with \(T_{stack}\), from 68.5 mV at 600 \textdegree C to 73.3 mV at 700 \textdegree C, 76.3 mV at 750 \textdegree C, and 79.1 mV at 800 \textdegree C, even though the maximum available AOGR ratio is lower at a high \(T_{stack}\).
+This trend confirms that AOGR introduces a temperature-dependent penalty mechanism whose magnitude grows with the AOGR ratio and disproportionately affects the higher-temperature operating points.
 
 The origin of this behavior can be explained by the dependence of reversible potential---which is the dominant factor determining cell voltage---on temperature and anode gas compositions, as higher temperatures reduce the reversible potential.
 The reversible cell voltage of the SOFC is given by Eq.~\eqref{eq:nernst}, where the second term on the right-hand side---the Nernstian term---governs how this temperature dependence is modified by the anode gas composition, while the standard-potential term \(-\Delta G^{\circ}(T)/2F\) sets its baseline magnitude.
